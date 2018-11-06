@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,700,800');
+
+html body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 100%;
+    background-color: rgb(243, 243, 243);
+    text-align: center;
+    color: #333333;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* CSS codes for homepage */
+
+.banner {
+    width: 100%;
+    height: 100%;
+    background-image: url('../images/beach_s.jpg');
+    background-position: center;
+    background-size: cover;
+    color: #FFFFFF;
+    position: relative;
+}
+
+.banner #darkOverlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+    opacity: 0.5;
+}
+
+.banner > h1 {
+    width: 40%;
+    font-size: 3em;
+    text-align: left;
+    position: relative;
+    top: 40%;
+    left: 5%;
+    text-shadow: 0.1rem 0.1rem #333333;
+}
+
+.ribbon {
+    position: relative;
+    background: linear-gradient(to bottom, rgb(255, 237, 158), rgb(255, 240, 137), rgb(255, 237, 158));
+    box-shadow: 0 -.1em .8em .5em rgba(30, 30, 30, .5);
+    z-index: 2;
+}
+
+.ribbon p {
+    position: relative;
+    text-align: center;
+    margin: 0;
+    padding: 2em;
+    font-size: 1.25em;
+    font-weight: 500;
+}
+
+.cardContain {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    z-index: 1;
+    padding: 0 10em;
+}
+
+.cardItem {
+    width: 25%;
+    height: 20em;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+
+.cardItem:nth-child(1) {
+    background-image: url('../images/food_s.jpg');
+}
+.cardItem:nth-child(2) {
+    background-image: url('../images/bedroom_s.jpg');
+}
+.cardItem:nth-child(3) {
+    background-image: url('../images/service_s.jpg');
+}
+.cardItem:nth-child(4) {
+    background-image: url('../images/poolside_s.jpg');
+}
+
+.cardItem #darkOverlay {
+    background-color: #000000;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: .3;
+    transition: opacity 0.1s linear;
+}
+
+.cardItem p {
+    color: #FFFFFF;
+    background-color: rgba(0, 0, 0, .5);
+    position: absolute;
+    text-align: center;
+    margin: 0;
+    width: 100%;
+    bottom: -5;
+    padding: 1em;
+    opacity: 0;
+    transition: opacity 0.1s linear, bottom 0.15s ease-out;
+}
+
+.cardItem:hover #darkOverlay {
+    opacity: 0;
+}
+
+.cardItem:hover p {
+    opacity: 1;
+    bottom: 0;
+}
+
+.cardContain h1 {
+    color: rgb(233, 215, 98);
+    text-shadow: 0 .15em .3em #CCCCCC;
+}
+
+.cardContain p {
+    line-height: 2em;
+    margin-top: 0;
+}
+
+.reserve {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    padding: 3em;
+    margin: auto;
+}
+
+.reserve div {
+    justify-content: center;
+    padding: 0 2em;
+}
+
+.reserve a {
+    text-decoration: none;
+    text-align: center;
+    color: #333333;
+}
+
+.reserve a div {
+    width: 15em;
+    border: .1em solid rgb(255, 237, 158);
+    background-color: rgb(255, 237, 158);
+    padding: 1em 2em;
+    margin: auto;
+    transition: box-shadow 0.05s linear;
+}
+
+.reserve a div:hover {
+    box-shadow: 0 .2em .3em .1em #DDDDDD; 
+}
+
+/* CSS codes for Reservation page */
+
+#reservationBanner {
+    background-image: url('athome_s.jpg');
+}

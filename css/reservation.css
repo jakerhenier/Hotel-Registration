@@ -1,0 +1,236 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,700,800');
+
+html body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 100%;
+    background-color: rgb(243, 243, 243);
+    color: #333333;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.banner {
+    width: 100%;
+    background-image: url('../images/athome_s.jpg');
+    background-position: center;
+    background-size: cover;
+    background-position-y: 0;
+    background-attachment: fixed;
+    color: #FFFFFF;
+    position: relative;
+    padding-bottom: 2em;
+    display: flex;
+    flex-direction: row;
+}
+
+.banner #darkOverlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+    opacity: 0.5;
+}
+
+.intro, .container {
+    width: 50%;
+    position: relative;
+}
+
+.intro {
+    position: relative;
+}
+
+.intro p {
+    position: fixed;
+    width: 50%;
+    left: 0;
+    top: 35%;
+    margin: auto;
+    padding-left: 1em;
+
+    color: #ffffff;
+    font-size: 3em;
+    font-weight: 700;
+    text-align: right;
+}
+
+.container {
+    position: relative;
+    right: 0;
+    margin: auto;
+}
+
+.container > p {
+    margin: 0;
+    padding: .5em;
+    font-size: 2em;
+    text-align: center;
+}
+
+.formContain {
+    position: relative;
+    margin: 0 2em;
+    height: auto;
+    padding: 2em 5em;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(247, 247, 247);
+    box-shadow: 0 .2em .5em .2em #555555;
+    border-radius: .1em;
+    color: #333333;
+}
+
+.formContain form p {
+    text-align: left;
+}
+
+.formContain form div {
+    justify-content: center;
+    margin: auto;
+}
+
+form {
+    width: 100%;
+}
+
+.inputBox p {
+    margin-bottom: .5em;
+}
+
+input[type=text] {
+    width: 100%;
+    background-color: rgb(250, 250, 250);
+    border: 1px solid rgb(236, 212, 104);
+    height: 2.5em;
+    padding: 1em;
+    border-radius: .1em;
+    font-family: 'Montserrat', sans-serif;
+}
+
+select {
+    width: 100%;
+    background-color: rgb(250, 250, 250);
+    border: 1px solid rgb(236, 212, 104);
+    height: 2.5em;
+    border-radius: .1em;
+    font-family: 'Montserrat', sans-serif;
+    padding: 0 .5em;
+}
+
+.roomList {
+    width: 100%;
+    height: 15em;
+    overflow-y: scroll;
+}
+
+.roomList table {
+    width: 100%;
+}
+
+.roomList table tr {
+    width: 100%;
+    border: none;
+    text-align: center;
+}
+
+.roomList table tr:nth-child(even) {
+    background-color: #DDDDDD;
+}
+
+.roomList table tr td {
+    padding: .75em 1em;
+}
+
+.roomList table tr td:hover {
+    background-color: rgb(255, 239, 170);
+    cursor: pointer;
+}
+
+#paypal-button {
+    display: none;
+}
+
+.radioContain {
+    padding: .5em 3em 0;
+}
+
+label {
+    position: relative;
+}
+
+label:nth-child(2) {
+    right: -6em;
+}
+
+label:hover {
+    cursor: pointer;
+}
+
+label input {
+    display: none;
+}
+
+.customRadio {
+    position: absolute;
+    height: 16px;
+    width: 16px;
+    border: 1px solid rgb(236, 212, 104);
+    border-radius: 50%;
+    margin-left: .5em;
+    transition: background-color .1s linear, border .1s linear;
+}
+
+label input:hover ~ .customRadio {
+    border: 2px solid rgb(236, 212, 104);
+}
+
+label input:checked ~ .customRadio {
+    background-color: rgb(236, 212, 104);
+}
+
+button[type=submit] {
+    width: 100%;
+    margin-top: 2em;
+    border: .1em solid rgb(236, 212, 104);
+    background: none;
+    padding: 1em;
+    font-family: 'Montserrat', sans-serif;
+    color: #666666;
+    transition: background-color .1s linear, color 0.1s linear;
+}
+
+button[type=submit]:hover {
+    background-color: rgb(236, 212, 104);
+    color: #333333;
+    cursor: pointer;
+}
+
+.formContain a {
+    text-decoration: none;
+    color: #333333;
+}
+
+#cancelButton {
+    width: 100%;
+    border: 1px solid rgb(189, 77, 77);
+    margin: .25em auto 0;
+    color: #666666;
+    transition: background-color .1s linear, color 0.1s linear;
+}
+
+#cancelButton:hover {
+    background-color: rgb(189, 77, 77);
+    color: #FFFFFF;
+}
+
+#cancelButton p {
+    text-align: center;
+    font-size: 14px;
+    margin: 0;
+    padding: .9em;
+}
