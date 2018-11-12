@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,700,800');
 
-html body {
+
+html, body {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
@@ -9,163 +10,186 @@ html body {
     background-color: rgb(243, 243, 243);
     text-align: center;
     color: #333333;
+    height: 100%;
 }
 
 * {
     box-sizing: border-box;
 }
 
-/* CSS codes for homepage */
-
 .banner {
     width: 100%;
     height: 100%;
-    background-image: url('../images/beach_s.jpg');
-    background-position: center;
-    background-size: cover;
-    color: #FFFFFF;
     position: relative;
+    background-image: url('../images/beach_s.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .banner #darkOverlay {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: #000000;
-    opacity: 0.5;
+    background-color: rgba(0, 0, 0, .5);
 }
 
-.banner > h1 {
-    width: 40%;
-    font-size: 3em;
-    text-align: left;
+.banner h1 {
+    width: 532px;
     position: relative;
-    top: 40%;
+    text-align: left;
+    margin: 0;
+    color: #FFFFFF;
+    top: 37%;
     left: 5%;
-    text-shadow: 0.1rem 0.1rem #333333;
+    font-size: 3em;
 }
 
 .ribbon {
+    width: 100%;
     position: relative;
-    background: linear-gradient(to bottom, rgb(255, 237, 158), rgb(255, 240, 137), rgb(255, 237, 158));
-    box-shadow: 0 -.1em .8em .5em rgba(30, 30, 30, .5);
-    z-index: 2;
+    background-color: #efe786;
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.25);
+    z-index: 9;
 }
 
-.ribbon p {
-    position: relative;
-    text-align: center;
+.ribbon h2 {
     margin: 0;
-    padding: 2em;
-    font-size: 1.25em;
-    font-weight: 500;
+    padding: 1em 0;
 }
 
 .cardContain {
     width: 100%;
+    position: relative;
+    z-index: 2;
     display: flex;
     flex-wrap: wrap;
+    flex-direction: row;
     justify-content: space-around;
-    z-index: 1;
-    padding: 0 10em;
 }
 
 .cardItem {
-    width: 25%;
-    height: 20em;
+    position: relative;
+    height: 49vh;
+    width: 49.8%;
+    margin: 1px;
+    color: #FFFFFF;
     background-position: center;
     background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.cardItem #darkOverlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .5);
+}
+
+.cardItem h3 {
     position: relative;
+}
+
+.cardItem .description {
+    position: absolute;
+    width: 60%;
+    bottom: 0;
+}
+
+.description p {
+    margin: 0;
+    text-align: left;
+    line-height: 1.5em;
+    padding: 0 0 2em 2em;
 }
 
 .cardItem:nth-child(1) {
     background-image: url('../images/food_s.jpg');
 }
+
 .cardItem:nth-child(2) {
     background-image: url('../images/bedroom_s.jpg');
 }
+
 .cardItem:nth-child(3) {
     background-image: url('../images/service_s.jpg');
 }
+
 .cardItem:nth-child(4) {
     background-image: url('../images/poolside_s.jpg');
 }
 
-.cardItem #darkOverlay {
-    background-color: #000000;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    opacity: .3;
-    transition: opacity 0.1s linear;
-}
-
-.cardItem p {
-    color: #FFFFFF;
-    background-color: rgba(0, 0, 0, .5);
-    position: absolute;
-    text-align: center;
-    margin: 0;
-    width: 100%;
-    bottom: -5;
-    padding: 1em;
-    opacity: 0;
-    transition: opacity 0.1s linear, bottom 0.15s ease-out;
-}
-
-.cardItem:hover #darkOverlay {
-    opacity: 0;
-}
-
-.cardItem:hover p {
-    opacity: 1;
-    bottom: 0;
-}
-
 .cardContain h1 {
-    color: rgb(233, 215, 98);
-    text-shadow: 0 .15em .3em #CCCCCC;
+    margin-top: 2em;
+    color: rgb(219, 198, 103);
 }
 
-.cardContain p {
+.cardContain > p {
+    margin: 0 5em;
     line-height: 2em;
-    margin-top: 0;
 }
 
 .reserve {
+    margin: 2em 0;
+    padding: 0 5em;
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    padding: 3em;
-    margin: auto;
+    justify-content: space-between;
+}
+
+.reserve div p {
+    font-weight: 600;
+    margin: 0;
+    padding: 1em 0;
 }
 
 .reserve div {
-    justify-content: center;
-    padding: 0 2em;
+    width: auto;
+    margin: auto;
 }
 
-.reserve a {
+#reservation {
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+#reservation a {
     text-decoration: none;
-    text-align: center;
     color: #333333;
 }
 
-.reserve a div {
-    width: 15em;
-    border: .1em solid rgb(255, 237, 158);
-    background-color: rgb(255, 237, 158);
+#reservation a div {
     padding: 1em 2em;
-    margin: auto;
-    transition: box-shadow 0.05s linear;
+    background-color: rgb(219, 198, 103);
+    text-align: center;
 }
 
-.reserve a div:hover {
-    box-shadow: 0 .2em .3em .1em #DDDDDD; 
+.reserve div p img {
+    width: 1.5em;
+    height: 1.5em;
+    vertical-align: middle;
 }
 
-/* CSS codes for Reservation page */
+footer {
+    width: 100%;
+    height: auto;
+    background-color: bisque;
+    text-align: left;
+}
 
-#reservationBanner {
-    background-image: url('athome_s.jpg');
+footer a {
+    text-decoration: none;
+    color: #333333;
+}
+
+footer a div {
+    float: right;
+    text-align: center;
+    padding: .25em .5em;
+}
+
+footer a div:hover {
+    text-decoration: underline;
 }

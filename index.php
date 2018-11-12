@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
+<meta name = "viewport" content = "width = device-width, initial-scale = 1.0" charset = "utf-8">
 <html>
     <head>
         <title>Home</title>
@@ -8,29 +8,57 @@
     <body>
         <div class = "banner">
             <div id = "darkOverlay"></div>
-            <p>Reward yourself with the pampering that you deserve.</p>
+            <h1>Reward yourself with the pampering that you deserve.</h1>
         </div>
 
         <div class = "ribbon">
-            <p>Let us give you the most luxorious of experiences you'll ever have.</p>
+            <h2>Let us give you the most luxorious of experiences you'll ever have.</h2>
         </div>
 
         <div class = "cardContain">
             <div class = "cardItem">
                 <div id = "darkOverlay"></div>
-                <p>High-class food</p>
+                <h3>High-class food</h3>
+                <div class = "description">
+                    <p>
+                        Tickle your taste buds with an endless selection of delicacies
+                        that will surely take you to a tasty adventure in every bite.
+                        From appetizers to desserts, choose it the way you like it.
+                    </p>
+                </div>
             </div>
             <div class = "cardItem">
                 <div id = "darkOverlay"></div>
-                <p>Exemplary room selection</p>
+                <h3>Exemplary room selection</h3>
+                <div class = "description">
+                    <p>
+                        Everybody has their own definition of comfort, that's why we give
+                        you the freedom to choose yours in our establishments. Make your stay
+                        the way you want it to be and achieve the most comfortable you.
+                    </p>
+                </div>
             </div>
             <div class = "cardItem">
                 <div id = "darkOverlay"></div>
-                <p>Warm service</p>
+                <h3>Top-notch services</h3>
+                <div class = "description">
+                    <p>
+                        You deserve to be spoiled every once in a while. So here at *hotel name*,
+                        we will do just that and make you live a dream of luxury and relaxation.
+                        So sit back, and live the life of a king... or a queen.
+                    </p>
+                </div>
             </div>
             <div class = "cardItem">
                 <div id = "darkOverlay"></div>
-                <p>Rejuvenating areas</p>
+                <h3>Rejuvenating areas</h3>
+                <div class = "description">
+                    <p>
+                        Be you and choose your relaxation. Establishments and areas that diversify
+                        and gather people to enjoy every moment spent. Each memory counts so we
+                        want you to make the most of everything.
+                    </p>
+                </div>
             </div>
 
             <h1>ABOUT US</h1>
@@ -43,11 +71,28 @@
 
         <div class = "reserve">
             <div>
-                <p>Make your reservation now!</p>
+                <p>
+                    Make your reservation now!
+                    <div id = "reservation">
+                        <a href = "reservation.php">
+                            <div>Make a reservation</div>
+                        </a>
+                    </div>
+                </p>
             </div>
-            <a href = "reservation.php">
-                <div>Make a reservation</div>
-            </a>
+             <!--
+                <div>
+                    <p>
+                        <img src = "images/telephone.png" />
+                        +639123456789
+                    </p>
+                </div> -->
         </div>
+
+        <footer>
+            <a href = "login.php">
+                <div>staff login</div>
+            </a>
+        </footer>
     </body>
 </html>

@@ -49,7 +49,7 @@ html body {
     position: fixed;
     width: 50%;
     left: 0;
-    top: 35%;
+    top: 33%;
     margin: auto;
     padding-left: 1em;
 
@@ -74,14 +74,15 @@ html body {
 
 .formContain {
     position: relative;
-    margin: 0 2em;
+    margin: auto;
+    width: 600px;
     height: auto;
-    padding: 2em 5em;
+    padding: 2em 3em;
     display: flex;
     flex-direction: column;
     background-color: rgb(247, 247, 247);
     box-shadow: 0 .2em .5em .2em #555555;
-    border-radius: .1em;
+    border-radius: .15em;
     color: #333333;
 }
 
@@ -98,8 +99,17 @@ form {
     width: 100%;
 }
 
+.inputBox {
+    position: relative;
+}
+
 .inputBox p {
     margin-bottom: .5em;
+}
+
+.inputBox .required {
+    color: rgb(189, 77, 77);
+    padding-left: .2em;
 }
 
 input[type=text] {
@@ -108,7 +118,7 @@ input[type=text] {
     border: 1px solid rgb(236, 212, 104);
     height: 2.5em;
     padding: 1em;
-    border-radius: .1em;
+    border-radius: .15em;
     font-family: 'Montserrat', sans-serif;
 }
 
@@ -117,7 +127,7 @@ select {
     background-color: rgb(250, 250, 250);
     border: 1px solid rgb(236, 212, 104);
     height: 2.5em;
-    border-radius: .1em;
+    border-radius: .15em;
     font-family: 'Montserrat', sans-serif;
     padding: 0 .5em;
 }
@@ -139,16 +149,16 @@ select {
 }
 
 .roomList table tr:nth-child(even) {
-    background-color: #DDDDDD;
+    background-color: rgb(233, 230, 230);
+}
+
+.roomList table tr:hover {
+    background-color: rgb(255, 239, 170);
+    cursor: pointer;
 }
 
 .roomList table tr td {
     padding: .75em 1em;
-}
-
-.roomList table tr td:hover {
-    background-color: rgb(255, 239, 170);
-    cursor: pointer;
 }
 
 #paypal-button {
@@ -156,15 +166,20 @@ select {
 }
 
 .radioContain {
-    padding: .5em 3em 0;
+    text-align: left;
+    width: 100%;
+    height: auto;
+    padding: 1em 3em 0;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
 }
 
 label {
     position: relative;
-}
-
-label:nth-child(2) {
-    right: -6em;
+    width: 50%;
+    padding-left: 2.5em;
 }
 
 label:hover {
@@ -173,12 +188,15 @@ label:hover {
 
 label input {
     display: none;
+    padding-left: 1.5em;
 }
 
 .customRadio {
     position: absolute;
-    height: 16px;
-    width: 16px;
+    height: 19px;
+    width: 19px;
+    top: 0;
+    left: 0;
     border: 1px solid rgb(236, 212, 104);
     border-radius: 50%;
     margin-left: .5em;
@@ -195,8 +213,7 @@ label input:checked ~ .customRadio {
 
 button[type=submit] {
     width: 100%;
-    margin-top: 2em;
-    border: .1em solid rgb(236, 212, 104);
+    border: .15em solid rgb(236, 212, 104);
     background: none;
     padding: 1em;
     font-family: 'Montserrat', sans-serif;
@@ -215,10 +232,21 @@ button[type=submit]:hover {
     color: #333333;
 }
 
+.formContain .inputBox:last-child {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 2em;
+}
+
+.buttonBox {
+    width: 49%;
+}
+
 #cancelButton {
     width: 100%;
-    border: 1px solid rgb(189, 77, 77);
-    margin: .25em auto 0;
+    border: .15em solid rgb(189, 77, 77);
     color: #666666;
     transition: background-color .1s linear, color 0.1s linear;
 }
@@ -226,6 +254,7 @@ button[type=submit]:hover {
 #cancelButton:hover {
     background-color: rgb(189, 77, 77);
     color: #FFFFFF;
+    cursor: pointer;
 }
 
 #cancelButton p {

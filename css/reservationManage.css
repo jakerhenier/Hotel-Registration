@@ -1,27 +1,19 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,700,800');
 
-html body {
+
+html, body {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
     font-family: 'Montserrat', sans-serif;
     font-size: 100%;
-    background-color: #EEEEEE;
+    background-color: rgb(243, 243, 243);
     color: #333333;
+    height: 100%;
 }
 
 * {
     box-sizing: border-box;
-}
-
-select {
-    width: auto;
-    background-color: rgb(250, 250, 250);
-    border: 1px solid rgb(236, 212, 104);
-    height: 2.5em;
-    border-radius: .1em;
-    font-family: 'Montserrat', sans-serif;
-    padding: 0 .5em;
 }
 
 .top {
@@ -58,8 +50,6 @@ select {
     padding: 1em;    
 }
 
-
-
 .userOptions {
     float: right;
     padding: 1em 0;
@@ -92,17 +82,9 @@ select {
     position: relative;
 }
 
-.toggles {
-    margin-bottom: 1em;
-}
-
-.toggles span {
-    padding-right: .5em;
-}
-
 table {
-    position: relative;
     width: 100%;
+    height: 200%;
 }
 
 table tr th {
@@ -111,20 +93,32 @@ table tr th {
     background-color: rgb(236, 212, 104);
 }
 
+table tr th:hover {
+    cursor: default;
+}
+
 table tr td {
     padding: .75em 1em;
 }
 
+table tr td:nth-child(4) {
+    background-color: rgb(243, 243, 243);
+}
+
+table tr:nth-child(even) {
+    background-color: rgb(233, 230, 230);
+}
+
 table tr th:nth-child(1) {
-    width: 80%
+    width: 15%;
 }
 
 table tr th:nth-child(2) {
     width: 20%;
 }
 
-table tr:nth-child(even) {
-    background-color: rgb(233, 230, 230);
+table tr th:nth-child(3) {
+    width: 50%;
 }
 
 table tr:hover {
@@ -132,68 +126,33 @@ table tr:hover {
     cursor: pointer;
 }
 
-.popupBoxContain {
-    position: fixed;
-    z-index: 99;
-    top: 0;
-    left: 0;
+table tr td:nth-child(4) {
+    padding: 0 1em;
+    padding-right: 0;
+}
+
+table tr td:nth-child(4):hover {
+    cursor: default;
+}
+
+table tr td button {
+    background-color: rgba(0, 0, 0, 0);
+    border: .1em solid rgb(236, 212, 104);
+    color: #666666;
+    border-radius: .1em;
+    padding: 1em 1em;
     width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, .7);
-    display: block;
+    font-family: 'Montserrat', sans-serif;
+    opacity: 0;
+    transition: background-color .1s linear;
 }
 
-.popupBox {
-    position: absolute;
-    width: 532px;
-    height: 600px;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    margin: auto;
-    padding: 2em;
-    background-color: #EEEEEE;
-    border-radius: .15em;
-}
-
-.popupBox h3 {
-    text-align: center;
-    margin-top: 0;
-}
-
-.statusBox {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-
-.statusBox label {
-    width: 49%;
-    margin: 0;
-}
-
-.statusBox label input {
-    display: none;
-}
-
-.statusBox label div {
-    text-align: center;
-    width: 100%;
-    padding: 1em;
-    margin: 0;
-    border: 2px solid rgb(255, 239, 170);
-    border-radius: .15em;
+table tr:hover > td button {
+    opacity: 1;
     cursor: pointer;
-    transition: background-color .1s linear, border .1s linear;
 }
 
-.statusBox label div:hover {
-    background-color: rgb(255, 239, 170);
-}
-
-.statusBox label input:checked + div {
+td button:hover {
     background-color: rgb(236, 212, 104);
-    border: 2px solid rgb(236, 212, 104);
+    color: #333333;
 }

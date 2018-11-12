@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
+<meta name = "viewport" content = "width = device-width, initial-scale = 1.0" charset = "utf-8">
 <html>
     <head>
         <title>Room Management</title>
@@ -7,15 +7,21 @@
     </head>
     <body>
         <div class = "top">
-            <div class = "hamburgerBox">
-                <div></div>
-                <div></div>
-                <div></div>
+            <div id = "menuItems">
+                <a id = "active">
+                    <div>
+                        Rooms
+                    </div>
+                </a>
+                <a href = "reservationManage.php">
+                    <div>
+                        Reservations
+                    </div>
+                </a>
             </div>
-            <span>Room management</span>
             <div class = "userOptions">
                 <span>Welcome, user.</span> <!-- First name of the current user will be displayed after 'Welcome, ' -->
-                <a href = "">logout</a> <!-- Destroy session and redirect to login page -->
+                <a href = "" onclick = "">logout</a> <!-- Destroy session and redirect to login page -->
             </div>
         </div>
         <div class = "underlay">
@@ -49,7 +55,31 @@
                     <td>0003</td>
                     <td>Occupied</td>
                 </tr>
+
+                <!-- The room management popup -->
+
+                <div class = "popupBoxContain">
+                    <div class = "popupBox">
+                        <h3>Room details</h3>
+                        <p>Number: <span class = "roomNo">0002</span></p>
+                        <p>Type: <span class = "roomNo">Standard</span></p>
+                        <p>Rate: ₱<span class = "roomNo">2,000</span></p>
+
+                        <div class = "statusBox">
+                            <label>
+                                <input type = "radio" name = "status" value = "occupied">
+                                <div>Occupied</div>
+                            </label>
+                            <label>
+                                <input type = "radio" name = "status" value = "available">
+                                <div>Available</div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
             </table>
         </div>
+
+        <script src = "../scripts/roomManage.js"></script>
     </body>
 </html>
