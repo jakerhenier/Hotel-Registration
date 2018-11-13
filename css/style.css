@@ -207,8 +207,57 @@ footer a div:hover {
     }
 }
 
+@media screen and (max-width: 1366px) {
+    .cardContain {
+        padding: 1em 0;
+    }
+}
+
 @media screen and (max-width: 768px) {
     .cardContain {
         padding: .5em 0;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .cardItem {
+        margin-top: .5em;
+    }
+
+    p#about {
+        padding: 0 2.5em;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .banner {
+        background-position: center;
+    }
+
+    .banner h1 {
+        width: 100%;
+        top: 40%;
+        left: 0;
+        padding: 0 0 0 .5em;
+        font-size: 2em;
+    }
+
+    .cardItem {
+        margin-top: .25em;
+    }
+
+    .cardItem .description {
+        width: 100%;
+        left: 0;
+        text-align: justify;
+    }
+
+    .description p {
+        padding: 0 1em 1em;
+    }
+
+    p#about {
+        text-align: justify;
+        padding: 1em;
     }
 }

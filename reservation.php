@@ -60,45 +60,7 @@
                             </select>
                             <p>Choose a room</p>
                             <div class = "roomList">
-                                <table>
-                                    <!-- Enter PHP code here for available room based on selected room type -->
-                                    <tr>
-                                        <td>Room 0001</td>
-                                        <td>₱2,045</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Room 0004</td>
-                                        <td>₱2,000</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Room 0006</td>
-                                        <td>₱3,050</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Room 0007</td>
-                                        <td>₱2,000</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Room 0008</td>
-                                        <td>₱2,500</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Room 0011</td>
-                                        <td>₱2,045</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Room 0012</td>
-                                        <td>₱2,005</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Room 0015</td>
-                                        <td>₱2,750</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Room 0019</td>
-                                        <td>₱3,300</td>
-                                    </tr>
-                                </table>
+                            
                             </div>
                         </div>
                         <div class = "inputBox">

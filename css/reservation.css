@@ -8,6 +8,7 @@ html body {
     font-size: 100%;
     background-color: rgb(243, 243, 243);
     color: #333333;
+    height: 100%;
 }
 
 * {
@@ -38,10 +39,6 @@ html body {
 
 .intro, .container {
     width: 50%;
-    position: relative;
-}
-
-.intro {
     position: relative;
 }
 
@@ -148,19 +145,31 @@ select {
     width: 100%;
 }
 
-.roomList table tr {
+.roomList form table label {
+    width: 100%;
+}
+
+.roomList form table label input {
+    display: b;
+}
+
+.roomList form table input:checked ~ tr {
+    background-color: rgb(255, 239, 170);
+}
+
+.roomList table label tr {
     width: 100%;
     border: none;
     text-align: center;
+    cursor: pointer;
+}
+
+.roomList table label tr {
+    cursor: pointer;
 }
 
 .roomList table tr:nth-child(even) {
     background-color: rgb(233, 230, 230);
-}
-
-.roomList table tr:hover {
-    background-color: rgb(255, 239, 170);
-    cursor: pointer;
 }
 
 .roomList table tr td {
@@ -268,4 +277,21 @@ button[type=submit]:hover {
     font-size: 14px;
     margin: 0;
     padding: .9em;
+}
+
+@media screen and (max-width: 1270px) {
+    body {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+    }
+
+    .intro, .container {
+        position: relative;
+        width: 100%;
+    }
+
+    .intro p {
+        position: absolute;
+    }
 }
