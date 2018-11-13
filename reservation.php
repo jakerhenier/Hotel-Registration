@@ -50,7 +50,7 @@
                         <!-- Expandable list for room type -->
                         <div class = "inputBox">
                             <p>Select room type</p>
-                            <select>
+                            <select id="room-select" name="roomType">
                                 <option selected disabled>Select...</option>
                                 <option value = "standard">Standard</option>
                                 <option value = "deluxe">Deluxe</option>
@@ -60,44 +60,7 @@
                             </select>
                             <p>Choose a room</p>
                             <div class = "roomList">
-                                <table>
-                                    <!-- Enter PHP code here for available room based on selected room type -->
-                                    <tr>
-                                        <td>Room 0001</td>
-                                        <td>₱2,045</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Room 0004</td>
-                                        <td>₱2,000</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Room 0006</td>
-                                        <td>₱3,050</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Room 0007</td>
-                                        <td>₱2,000</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Room 0008</td>
-                                        <td>₱2,500</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Room 0011</td>
-                                        <td>₱2,045</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Room 0012</td>
-                                        <td>₱2,005</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Room 0015</td>
-                                        <td>₱2,750</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Room 0019</td>
-                                        <td>₱3,300</td>
-                                    </tr>
+                                <table id="rooms">
                                 </table>
                             </div>
                         </div>
@@ -111,48 +74,6 @@
                                 <label>
                                     <input type = "radio" name = "payment" value = "online" />Pay online
                                     <span class = "customRadio"></span>
-
-                                    <!--
-                                    <div id = "onlinePayment">
-                                        <div id="paypal-button"></div>
-                                        <script src="https://www.paypalobjects.com/api/checkout.js"></script>
-                                        <script>
-                                        paypal.Button.render({
-                                        // Configure environment
-                                        env: 'sandbox',
-                                        client: {
-                                        sandbox: 'demo_sandbox_client_id',
-                                        production: 'demo_production_client_id'
-                                        },
-                                        // Customize button (optional)
-                                        locale: 'en_PH',
-                                        style: {
-                                        size: 'small',
-                                        color: 'gold',
-                                        shape: 'pill',
-                                        },
-                                        // Set up a payment
-                                        payment: function (data, actions) {
-                                        return actions.payment.create({
-                                        transactions: [{
-                                        amount: {
-                                        total: '0.01',
-                                        currency: 'PHP'
-                                        }
-                                        }]
-                                        });
-                                        },
-                                        // Execute the payment
-                                        onAuthorize: function (data, actions) {
-                                        return actions.payment.execute()
-                                        .then(function () {
-                                        // Show a confirmation message to the buyer
-                                        window.alert('Thank you for your purchase!');
-                                        });
-                                        }
-                                        }, '#paypal-button');
-                                        </script>
-                                    </div> -->
                                 </label>
                             </div>
                         </div>
@@ -172,14 +93,27 @@
                 </div>
             </div>
         </div>
-        <!--
+
+        <script src="scripts/jquery.js"></script>
         <script>
-            var radios = document.form["paymentMethod"].element["onlinePay"];
-            for (radio in radios) {
-                radios[radio].onclick = function() {
-                    document.getElementById("paypal-button").style.display = "block";
-                }
-            }
-        </script> -->
+            $(document).ready(() => {
+                $('#room-select').on('change', function (e) {
+                    var optionSelected = $("option:selected", this);
+                    var roomSelect = optionSelected.val();
+                    console.log(roomSelect);
+                    $.ajax({
+                        method: 'POST',
+                        url: 'includes/load-rooms.php',
+                        data: {
+                            roomSelect: roomSelect
+                        },
+                        dataType: 'text',
+                        success: function (data) {
+                            $('#rooms').html(data);
+                        } 
+                    });
+                });
+            })
+        </script>
     </body>
 </html>
