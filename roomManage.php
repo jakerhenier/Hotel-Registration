@@ -37,7 +37,7 @@
                     <option value = "apartment">Apartment style</option>
                 </select>
             </div>
-            <table>
+            <table id = "table">
                 <tr>
                     <th>Room number</th>
                     <th>State</th>
@@ -61,9 +61,9 @@
                 <div class = "popupBoxContain">
                     <div class = "popupBox">
                         <h3>Room details</h3>
-                        <p>Number: <span class = "roomNo">0002</span></p>
-                        <p>Type: <span class = "roomNo">Standard</span></p>
-                        <p>Rate: ₱<span class = "roomNo">2,000</span></p>
+                        <p>Number: <span class = "roomNo">0002</span></p> <!-- Room number displayed here -->
+                        <p>Type: <span class = "roomType">Standard</span></p> <!-- Room type displayed here -->
+                        <p>Rate: ₱<span class = "roomRate">2,000</span></p> <!-- Room rate displayed here -->
 
                         <div class = "statusBox">
                             <label>
@@ -80,6 +80,13 @@
             </table>
         </div>
 
-        <script src = "../scripts/roomManage.js"></script>
+        <script>
+            document.getElementById("table tr").click(function()
+            {
+                document.getElementById(".popupBoxContain").style.display = "block";
+                //var value = $(this).find();
+            }
+            )
+        </script>
     </body>
 </html>

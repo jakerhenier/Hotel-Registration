@@ -1,3 +1,6 @@
-function addRoom() {
-    document.getElementById("roomForm").style.display = "block";
-}
+document.getElementById("table tr").click(function()
+    {
+        document.getElementById("popupBoxContain").style.display = 'block';
+        //var value = $(this).find();
+    }
+)

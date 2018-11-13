@@ -27,6 +27,26 @@
                             <p>Contact number (+63)<span class = "required">*</span></p>
                             <input type = "text" name = "contactNo" required> <!-- Text field for contact number -->
                         </div>
+                        <div class = "inputBox" id = "numContain">
+                            <div class = "numInput">
+                                <p>Number of adults</p>
+                                <input type = "number" name = "noOfAdults" min = "1" max = "4" value = "1"> <!-- Field for no of adults -->
+                            </div>
+                            <div class = "numInput">
+                                <p>Number of children</p>
+                                <input type = "number" name = "noOfKids" min = "0" max = "4"> <!-- Field for no of kids -->
+                            </div>
+                        </div>
+                        <div class = "inputBox" id = "numContain">
+                            <div class = "dateInput">
+                                <p>Check-in date<span class = "required">*</span></p>
+                                <input type = "date" required>
+                            </div>
+                            <div class = "dateInput">
+                                <p>Check-out date<span class = "required">*</span></p>
+                                <input type = "date" required>
+                            </div>
+                        </div>
                         <!-- Expandable list for room type -->
                         <div class = "inputBox">
                             <p>Select room type</p>

@@ -43,7 +43,7 @@ html, body {
 }
 
 #menuItems a:hover {
-    background-color: #EEEEEE;
+    background-color: rgba(255, 255, 255, .4);
 }
 
 #menuItems a div {
@@ -140,15 +140,15 @@ table tr td button {
     border: .1em solid rgb(236, 212, 104);
     color: #666666;
     border-radius: .1em;
-    padding: 1em 1em;
+    padding: .9em 1em;
     width: 100%;
     font-family: 'Montserrat', sans-serif;
-    opacity: 0;
+    display: none;
     transition: background-color .1s linear;
 }
 
 table tr:hover > td button {
-    opacity: 1;
+    display: inline;
     cursor: pointer;
 }
 

@@ -66,17 +66,20 @@ html, body {
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-around;
+    padding: 1em 10em;
 }
 
 .cardItem {
     position: relative;
-    height: 49vh;
-    width: 49.8%;
-    margin: 1px;
+    height: 350px;
+    width: 560px;
+    margin: auto;
     color: #FFFFFF;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+    margin-top: 2em;
+    box-shadow: 0 5px 10px 3px rgba(0, 0, 0, .14);
 }
 
 .cardItem #darkOverlay {
@@ -92,7 +95,7 @@ html, body {
 
 .cardItem .description {
     position: absolute;
-    width: 60%;
+    width: 70%;
     bottom: 0;
 }
 
@@ -100,7 +103,7 @@ html, body {
     margin: 0;
     text-align: left;
     line-height: 1.5em;
-    padding: 0 0 2em 2em;
+    padding: 0 0 1.5em 1.5em;
 }
 
 .cardItem:nth-child(1) {
@@ -119,13 +122,13 @@ html, body {
     background-image: url('../images/poolside_s.jpg');
 }
 
-.cardContain h1 {
+h1#about {
     margin-top: 2em;
     color: rgb(219, 198, 103);
 }
 
-.cardContain > p {
-    margin: 0 5em;
+p#about {
+    padding: 0 10em;
     line-height: 2em;
 }
 
@@ -192,4 +195,20 @@ footer a div {
 
 footer a div:hover {
     text-decoration: underline;
+}
+
+@media screen and (max-width: 1480px) {
+    .cardContain {
+        padding: 1em 5em;
+    }
+
+    p#about {
+        padding: 0 5em;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .cardContain {
+        padding: .5em 0;
+    }
 }

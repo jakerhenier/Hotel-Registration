@@ -79,7 +79,6 @@ html body {
     height: auto;
     padding: 2em 3em;
     display: flex;
-    flex-direction: column;
     background-color: rgb(247, 247, 247);
     box-shadow: 0 .2em .5em .2em #555555;
     border-radius: .15em;
@@ -90,17 +89,13 @@ html body {
     text-align: left;
 }
 
-.formContain form div {
-    justify-content: center;
-    margin: auto;
-}
-
 form {
     width: 100%;
 }
 
 .inputBox {
     position: relative;
+    width: 100%;
 }
 
 .inputBox p {
@@ -110,9 +105,10 @@ form {
 .inputBox .required {
     color: rgb(189, 77, 77);
     padding-left: .2em;
+    font-weight: bold;
 }
 
-input[type=text] {
+input[type=text], input[type=number], input[type=date] {
     width: 100%;
     background-color: rgb(250, 250, 250);
     border: 1px solid rgb(236, 212, 104);
@@ -120,6 +116,16 @@ input[type=text] {
     padding: 1em;
     border-radius: .15em;
     font-family: 'Montserrat', sans-serif;
+}
+
+#numContain {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.numInput, .dateInput {
+    width: 49%;
 }
 
 select {

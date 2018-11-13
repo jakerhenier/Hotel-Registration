@@ -60,14 +60,15 @@
                     </p>
                 </div>
             </div>
-
-            <h1>ABOUT US</h1>
-
-            <p>We at *hotel name*, we dedicate ourselves to offer the most exemplary services and amenities to bring out the brightest smile on our customers'
-                faces. By providing the most relaxing facilities, high-class meals, and top-notch services, we can assure the best of the best experiences to our
-                customers, and assuring them that *hotel name* is a place where they can go back and unwind to from all of the worries and stress that life brings.
-            </p>
         </div>
+
+        <h1 id = "about">ABOUT US</h1>
+
+        <p id = "about">
+            We at *hotel name*, we dedicate ourselves to offer the most exemplary services and amenities to bring out the brightest smile on our customers'
+            faces. By providing the most relaxing facilities, high-class meals, and top-notch services, we can assure the best of the best experiences to our
+            customers, and assuring them that *hotel name* is a place where they can go back and unwind to from all of the worries and stress that life brings.
+        </p>
 
         <div class = "reserve">
             <div>
