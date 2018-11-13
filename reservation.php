@@ -61,6 +61,11 @@
                             <p>Choose a room</p>
                             <div class = "roomList">
                                 <table id="rooms">
+                                    <tr>
+                                        <td><input value="1" type="radio" name="roomNo" id="roomNo"></td>
+                                        <td><label for="roomNo">Room 1</label></td>
+                                        <td><label for="roomNo">₱ 2000</label></td>
+                                    </tr>
                                 </table>
                             </div>
                         </div>
