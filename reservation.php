@@ -50,7 +50,7 @@
                         <!-- Expandable list for room type -->
                         <div class = "inputBox">
                             <p>Select room type</p>
-                            <select id="room-select" name="roomType">
+                            <select id="room-select" name="roomTyp">
                                 <option selected disabled>Select...</option>
                                 <option value = "standard">Standard</option>
                                 <option value = "deluxe">Deluxe</option>
