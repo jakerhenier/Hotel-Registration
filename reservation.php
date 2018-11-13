@@ -60,8 +60,8 @@
                             </select>
                             <p>Choose a room</p>
                             <div class = "roomList">
-<<<<<<< HEAD
-                                
+                                <table id="rooms">
+                                </table>
                             </div>
                         </div>
                         <div class = "inputBox">
