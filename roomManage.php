@@ -80,13 +80,7 @@
             </table>
         </div>
 
-        <script>
-            document.getElementById("table tr").click(function()
-            {
-                document.getElementById(".popupBoxContain").style.display = "block";
-                //var value = $(this).find();
-            }
-            )
-        </script>
+        <script src = "scripts/jquery-3.3.1.min.js"></script>
+        <script src = "scripts/roomManage.js"></script>
     </body>
 </html>
