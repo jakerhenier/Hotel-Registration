@@ -61,11 +61,7 @@
                             <p>Choose a room</p>
                             <div class = "roomList">
 <<<<<<< HEAD
-                            
-=======
-                                <table id="rooms">
-                                </table>
->>>>>>> 6f53293e408b898a404684c66497231e1b4932a6
+                                
                             </div>
                         </div>
                         <div class = "inputBox">
