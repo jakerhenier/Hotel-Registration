@@ -1,5 +1,5 @@
 <?php 
-include_once('db.php');
+include_once('../config/db.php');
 
 
 if(isset($_POST['roomSelect'])) {
@@ -8,13 +8,13 @@ if(isset($_POST['roomSelect'])) {
     }
     else {
         $roomSelect = mysqli_real_escape_string($conn, $_POST['roomSelect']);
-        $query = "SELECT * FROM rooms WHERE roomtype = '{$roomSelect}'";
+        $query = "SELECT * FROM rooms WHERE roomtype = '{$roomSelect}' AND status = 'Available'";
         $result = mysqli_query($conn, $query);
         if (mysqli_num_rows($result) > 0) {
             while ($row = mysqli_fetch_assoc($result)) {
                 echo 
                     '<tr>
-                        <td><input value='.$row['roomNo'].' type="radio" id=\'roomNo\' name=\'roomNo\'></td>
+                        <td><input value='.$row['roomNo'].' type="radio" id=\'roomNo\' name=\'roomNo\' required></td>
                         <td><label for=\'roomNo\'>Room '.$row['roomNo'].'</label></td>
                         <td><label for=\'roomNo\'>₱ '.$row['rate'].'</label></td>
                     </tr>';

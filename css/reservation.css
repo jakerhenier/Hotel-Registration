@@ -217,7 +217,7 @@ label input:checked ~ .customRadio {
     background-color: rgb(236, 212, 104);
 }
 
-button[type=submit] {
+input[type=submit] {
     width: 100%;
     border: .15em solid rgb(236, 212, 104);
     background: none;
@@ -227,7 +227,7 @@ button[type=submit] {
     transition: background-color .1s linear, color 0.1s linear;
 }
 
-button[type=submit]:hover {
+input[type=submit]:hover {
     background-color: rgb(236, 212, 104);
     color: #333333;
     cursor: pointer;
