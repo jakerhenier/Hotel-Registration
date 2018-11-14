@@ -8,6 +8,7 @@ html body {
     font-size: 100%;
     background-color: rgb(243, 243, 243);
     color: #333333;
+    height: 100%;
 }
 
 * {
@@ -38,10 +39,6 @@ html body {
 
 .intro, .container {
     width: 50%;
-    position: relative;
-}
-
-.intro {
     position: relative;
 }
 
@@ -146,21 +143,82 @@ select {
 
 .roomList table {
     width: 100%;
+    text-align: center;
+    border: none;
 }
 
-.roomList table tr {
+table#rooms tr {
+    border: 0;
+}
+
+table#rooms tr td {
+    border: none;
+    padding: 0;
+}
+
+table#rooms tr td:nth-child(1) {
+    width: 100%;
+}
+
+table#rooms tr td label {
+    padding: 0;
+    margin: 0;
+}
+
+table#rooms tr:hover {
+    background-color: rgb(255, 249, 221);;
+}
+
+div.itemstat {
+    float: left;
+    width: 30px;
+    height: 30px;
+    margin: .6em 1em;
+    background-image: url('../images/bullet.png');
+    background-position: center;
+    background-size: cover;
+}
+
+table input:checked + div.itemstat {
+    background-image: url('../images/check.png');
+}
+
+div.labels {
+    float: right;
+    width: 80%;
+    padding: 1em 0;
+}
+
+div.labels label:nth-child(1) {
+    padding-right: 5em;
+}
+
+/*
+.roomList form table label {
+    width: 100%;
+}
+
+.roomList form table label input {
+    display: block;
+}
+
+.roomList form table input:checked ~ tr {
+    background-color: rgb(255, 239, 170);
+}
+
+.roomList table label tr {
     width: 100%;
     border: none;
     text-align: center;
+    cursor: pointer;
+} */
+
+.roomList table label tr {
+    cursor: pointer;
 }
 
 .roomList table tr:nth-child(even) {
     background-color: rgb(233, 230, 230);
-}
-
-.roomList table tr:hover {
-    background-color: rgb(255, 239, 170);
-    cursor: pointer;
 }
 
 .roomList table tr td {
@@ -268,4 +326,21 @@ input[type=submit]:hover {
     font-size: 14px;
     margin: 0;
     padding: .9em;
+}
+
+@media screen and (max-width: 1270px) {
+    body {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+    }
+
+    .intro, .container {
+        position: relative;
+        width: 100%;
+    }
+
+    .intro p {
+        position: absolute;
+    }
 }
