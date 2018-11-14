@@ -14,9 +14,15 @@ if(isset($_POST['roomSelect'])) {
             while ($row = mysqli_fetch_assoc($result)) {
                 echo 
                     '<tr>
-                        <td><input value='.$row['roomNo'].' type="radio" id=\'roomNo\' name=\'roomNo\' required></td>
-                        <td><label for=\'roomNo\'>Room '.$row['roomNo'].'</label></td>
-                        <td><label for=\'roomNo\'>₱ '.$row['rate'].'</label></td>
+                        <td>
+                            <label>
+                                <input value='.$row['roomNo'].' type="radio" id=\'roomNo\' name=\'roomNo\' required>
+                                <div class = "itemstat"></div>
+                                <div class = "labels">
+                                    <label for="roomNo">Room '.$row['roomNo'].' &emsp;&emsp;&emsp;&emsp; ₱ '.$row['rate'].'</label>
+                                </div>
+                            </label>
+                        </td>
                     </tr>';
             }
         }

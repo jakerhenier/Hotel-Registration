@@ -1,0 +1,6 @@
+Jake ang validation sa number input kay dili dapat mag baba ug negative.
+This is for the contact no, noofadults, and noofkids.
+
+Then naa koy gibutang nga success php, bale example lang na nga location if ang user kay successfull iyang pag book.
+
+Nag attach sad kog SQL file jake para imong i import, asd_hotel ang name sa database dapat.

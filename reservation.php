@@ -25,7 +25,7 @@
                         </div>
                         <div class = "inputBox">
                             <p>Contact number (+63)<span class = "required">*</span></p>
-                            <input type = "number" name = "contactno" required> <!-- Text field for contact number -->
+                            <input type = "number" name = "contactno" min="0" required> <!-- Text field for contact number -->
                         </div>
                         <div class = "inputBox" id = "numContain">
                             <div class = "numInput">
@@ -34,7 +34,7 @@
                             </div>
                             <div class = "numInput">
                                 <p>Number of children</p>
-                                <input type = "number" name = "noofkids" min = "0" max = "4"> <!-- Field for no of kids -->
+                                <input type = "number" name = "noofkids" min = "0" max = "4" value="0"> <!-- Field for no of kids -->
                             </div>
                         </div>
                         <div class = "inputBox" id = "numContain">
@@ -62,63 +62,6 @@
                             <div class = "roomList">
                                 <table id="rooms">
                                     <!-- Table data to be filled during AJAX. -->
-                                    <tr>
-                                        <td>
-                                            <label>
-                                                <input value="1" type="radio" name="roomNo" id="roomNo">
-                                                <div class = "itemstat"></div>
-
-                                                <div class = "labels">
-                                                    <label for="roomNo">Room 1 &emsp;&emsp;&emsp;&emsp; ₱ 2000</label>
-                                                </div>
-                                            </label>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <label>
-                                                <input value="1" type="radio" name="roomNo" id="roomNo">
-                                                <div class = "itemstat"></div>
-
-                                                <div class = "labels">
-                                                    <label for="roomNo">Room 1 &emsp;&emsp;&emsp;&emsp; ₱ 2000</label>
-                                                </div>
-                                            </label>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <label>
-                                                <input value="1" type="radio" name="roomNo" id="roomNo">
-                                                <div class = "itemstat"></div>
-
-                                                <div class = "labels">
-                                                    <label for="roomNo">Room 1 &emsp;&emsp;&emsp;&emsp; ₱ 2000</label>
-                                                </div>
-                                            </label>
-                                        </td>
-                                    </tr>
-                                    <!--
-                                    <tr>
-                                        <td>
-                                            <label>
-                                                <input value="1" type="radio" name="roomNo" id="roomNo">
-                                                <div class = "itemstat"></div>
-                                            </label>
-                                        </td>
-                                        <td><label for="roomNo">Room 1</label></td>
-                                        <td><label for="roomNo">₱ 2000</label></td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <label>
-                                                <input value="1" type="radio" name="roomNo" id="roomNo">
-                                                <div class = "itemstat"></div>
-                                            </label>
-                                        </td>
-                                        <td><label for="roomNo">Room 1</label></td>
-                                        <td><label for="roomNo">₱ 2000</label></td>
-                                    </tr> -->
                                 </table>
                             </div>
                         </div>
