@@ -24,8 +24,8 @@
                             <input type = "text" name = "firstName" required> <!-- Text field first name -->
                         </div>
                         <div class = "inputBox">
-                            <p>Contact number (+63)<span class = "required">*</span></p>
-                            <input type = "text" name = "contactNo" required> <!-- Text field for contact number -->
+                            <p>Contact number<span class = "required">*</span></p>
+                            <input type = "text" name = "contactNo" value = "09" max = "11" required> <!-- Text field for contact number -->
                         </div>
                         <div class = "inputBox" id = "numContain">
                             <div class = "numInput">
