@@ -143,14 +143,63 @@ select {
 
 .roomList table {
     width: 100%;
+    text-align: center;
+    border: none;
 }
 
+table#rooms tr {
+    border: 0;
+}
+
+table#rooms tr td {
+    border: none;
+    padding: 0;
+}
+
+table#rooms tr td:nth-child(1) {
+    width: 100%;
+}
+
+table#rooms tr td label {
+    padding: 0;
+    margin: 0;
+}
+
+table#rooms tr:hover {
+    background-color: rgb(255, 249, 221);;
+}
+
+div.itemstat {
+    float: left;
+    width: 30px;
+    height: 30px;
+    margin: .6em 1em;
+    background-image: url('../images/bullet.png');
+    background-position: center;
+    background-size: cover;
+}
+
+table input:checked + div.itemstat {
+    background-image: url('../images/check.png');
+}
+
+div.labels {
+    float: right;
+    width: 80%;
+    padding: 1em 0;
+}
+
+div.labels label:nth-child(1) {
+    padding-right: 5em;
+}
+
+/*
 .roomList form table label {
     width: 100%;
 }
 
 .roomList form table label input {
-    display: b;
+    display: block;
 }
 
 .roomList form table input:checked ~ tr {
@@ -162,7 +211,7 @@ select {
     border: none;
     text-align: center;
     cursor: pointer;
-}
+} */
 
 .roomList table label tr {
     cursor: pointer;

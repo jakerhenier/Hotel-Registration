@@ -62,10 +62,62 @@
                             <div class = "roomList">
                                 <table id="rooms">
                                     <tr>
-                                        <td><input value="1" type="radio" name="roomNo" id="roomNo"></td>
+                                        <td>
+                                            <label>
+                                                <input value="1" type="radio" name="roomNo" id="roomNo">
+                                                <div class = "itemstat"></div>
+
+                                                <div class = "labels">
+                                                    <label for="roomNo">Room 1 &emsp;&emsp;&emsp;&emsp; ₱ 2000</label>
+                                                </div>
+                                            </label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label>
+                                                <input value="1" type="radio" name="roomNo" id="roomNo">
+                                                <div class = "itemstat"></div>
+
+                                                <div class = "labels">
+                                                    <label for="roomNo">Room 1 &emsp;&emsp;&emsp;&emsp; ₱ 2000</label>
+                                                </div>
+                                            </label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label>
+                                                <input value="1" type="radio" name="roomNo" id="roomNo">
+                                                <div class = "itemstat"></div>
+
+                                                <div class = "labels">
+                                                    <label for="roomNo">Room 1 &emsp;&emsp;&emsp;&emsp; ₱ 2000</label>
+                                                </div>
+                                            </label>
+                                        </td>
+                                    </tr>
+                                    <!--
+                                    <tr>
+                                        <td>
+                                            <label>
+                                                <input value="1" type="radio" name="roomNo" id="roomNo">
+                                                <div class = "itemstat"></div>
+                                            </label>
+                                        </td>
                                         <td><label for="roomNo">Room 1</label></td>
                                         <td><label for="roomNo">₱ 2000</label></td>
                                     </tr>
+                                    <tr>
+                                        <td>
+                                            <label>
+                                                <input value="1" type="radio" name="roomNo" id="roomNo">
+                                                <div class = "itemstat"></div>
+                                            </label>
+                                        </td>
+                                        <td><label for="roomNo">Room 1</label></td>
+                                        <td><label for="roomNo">₱ 2000</label></td>
+                                    </tr> -->
                                 </table>
                             </div>
                         </div>
