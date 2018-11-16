@@ -60,10 +60,10 @@
 
                 <div class = "popupBoxContain">
                     <div class = "popupBox">
-                        <h3>Room details</h3>
-                        <p>Number: <span class = "roomNo">0002</span></p> <!-- Room number displayed here -->
-                        <p>Type: <span class = "roomType">Standard</span></p> <!-- Room type displayed here -->
-                        <p>Rate: ₱<span class = "roomRate">2,000</span></p> <!-- Room rate displayed here -->
+                        <h3 class = "h3 h3--room">Room details</h3>
+                        <p>Number:&emsp;<span class = "roomDetails roomNo">0002</span></p> <!-- Room number displayed here -->
+                        <p>Type:&emsp;<span class = "roomDetails roomType">Standard</span></p> <!-- Room type displayed here -->
+                        <p>Rate:&emsp;₱<span class = "roomDetails roomRate">2,000</span></p> <!-- Room rate displayed here -->
 
                         <div class = "statusBox">
                             <label>
@@ -75,12 +75,64 @@
                                 <div>Available</div>
                             </label>
                         </div>
+
+                        <h3 class = "h3 h3--client">Client details</h3>
+                        <div class = "formContain">
+                            <form action="">
+                                <div class = "inputBox">
+                                    <p>Last name</p>
+                                    <input type = "text" name = "lastName" required>
+                                </div>
+                                <div class = "inputBox">
+                                    <p>First name</p>
+                                    <input type = "text" name = "lastName" required>
+                                </div>
+                                <div class = "inputBox">
+                                    <p>Contact number</p>
+                                    <input type = "text" name = "lastName" required>
+                                </div>
+                                <div class = "inputBox" id = "numContain">
+                                    <div class = "numInput">
+                                        <p>Number of adults</p>
+                                        <input type = "number" name = "noofadults" min = "1" max = "4" value = "1"> <!-- Field for no of adults -->
+                                    </div>
+                                    <div class = "numInput">
+                                        <p>Number of children</p>
+                                        <input type = "number" name = "noofkids" min = "0" max = "4" value="0"> <!-- Field for no of kids -->
+                                    </div>
+                                </div>
+                                <!-- This div will only appear if the room is booked, otherwise not displayed -->
+                                <div class = "paymentDetails">
+                                    <h3 class = "h3 h3--payment">Payment details</h3>
+                                    <p>Room payment:&emsp;₱<span class = "payments"></span></p>
+                                    <p>Adult clients:&emsp;₱<span class = "payments"></span></p>
+                                    <p>Child clients:&emsp;₱<span class = "payments"></span></p>
+                                    <p>Total payment:&emsp;₱<span class = "payments"></span></p>
+                                </div>
+                                <div class = "inputBox"> <!-- Button for submit and cancel -->
+                                    <div class = "buttonBox">
+                                        <input type = "submit" name="reserve" value="Confirm" />
+                                    </div>
+                                    <div class = "buttonBox">
+                                        <a href = "#" id = "collapse" onclick = "closePopUp();">
+                                            <div id = "cancelButton">
+                                                <p>Close</p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </table>
         </div>
 
         <script src = "scripts/jquery-3.3.1.min.js"></script>
-        <script src = "scripts/roomManage.js"></script>
+        <script>
+            function closePopUp() {
+                document.getElementById("popupBoxContain").style.display = "none";
+            }
+        </script>
     </body>
 </html>

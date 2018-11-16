@@ -14,43 +14,43 @@
             <div class = "container"> <!-- Main div -->
                 <p>Room reservation</p>
                 <div class = "formContain">
-                    <form action = ""> <!-- Enter form action here, PHP file directory -->
+                    <form action = "includes/action/reserve.php" method="POST"> <!-- Enter form action here, PHP file directory -->
                         <div class = "inputBox">
                             <p>Last name<span class = "required">*</span></p>
-                            <input type = "text" name = "lastName" required> <!-- Text field for last name -->
+                            <input type = "text" name = "lastname" required> <!-- Text field for last name -->
                         </div>
                         <div class = "inputBox">
                             <p>First name<span class = "required">*</span></p>
-                            <input type = "text" name = "firstName" required> <!-- Text field first name -->
+                            <input type = "text" name = "firstname" required> <!-- Text field first name -->
                         </div>
                         <div class = "inputBox">
-                            <p>Contact number<span class = "required">*</span></p>
-                            <input type = "text" name = "contactNo" value = "09" max = "11" required> <!-- Text field for contact number -->
+                            <p>Contact number (+63)<span class = "required">*</span></p>
+                            <input type = "number" name = "contactno" min="0" required> <!-- Text field for contact number -->
                         </div>
                         <div class = "inputBox" id = "numContain">
                             <div class = "numInput">
                                 <p>Number of adults</p>
-                                <input type = "number" name = "noOfAdults" min = "1" max = "4" value = "1"> <!-- Field for no of adults -->
+                                <input type = "number" name = "noofadults" min = "1" max = "4" value = "1"> <!-- Field for no of adults -->
                             </div>
                             <div class = "numInput">
                                 <p>Number of children</p>
-                                <input type = "number" name = "noOfKids" min = "0" max = "4"> <!-- Field for no of kids -->
+                                <input type = "number" name = "noofkids" min = "0" max = "4" value="0"> <!-- Field for no of kids -->
                             </div>
                         </div>
                         <div class = "inputBox" id = "numContain">
                             <div class = "dateInput">
                                 <p>Check-in date<span class = "required">*</span></p>
-                                <input type = "date" required>
+                                <input type = "date" name="check_in" required>
                             </div>
                             <div class = "dateInput">
                                 <p>Check-out date<span class = "required">*</span></p>
-                                <input type = "date" required>
+                                <input type = "date" name="check_out" required>
                             </div>
                         </div>
                         <!-- Expandable list for room type -->
                         <div class = "inputBox">
                             <p>Select room type</p>
-                            <select id="room-select" name="roomType">
+                            <select id="room-select">
                                 <option selected disabled>Select...</option>
                                 <option value = "standard">Standard</option>
                                 <option value = "deluxe">Deluxe</option>
@@ -61,63 +61,7 @@
                             <p>Choose a room</p>
                             <div class = "roomList">
                                 <table id="rooms">
-                                    <tr>
-                                        <td>
-                                            <label>
-                                                <input value="1" type="radio" name="roomNo" id="roomNo">
-                                                <div class = "itemstat"></div>
-
-                                                <div class = "labels">
-                                                    <label for="roomNo">Room 1 &emsp;&emsp;&emsp;&emsp; ₱ 2000</label>
-                                                </div>
-                                            </label>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <label>
-                                                <input value="1" type="radio" name="roomNo" id="roomNo">
-                                                <div class = "itemstat"></div>
-
-                                                <div class = "labels">
-                                                    <label for="roomNo">Room 1 &emsp;&emsp;&emsp;&emsp; ₱ 2000</label>
-                                                </div>
-                                            </label>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <label>
-                                                <input value="1" type="radio" name="roomNo" id="roomNo">
-                                                <div class = "itemstat"></div>
-
-                                                <div class = "labels">
-                                                    <label for="roomNo">Room 1 &emsp;&emsp;&emsp;&emsp; ₱ 2000</label>
-                                                </div>
-                                            </label>
-                                        </td>
-                                    </tr>
-                                    <!--
-                                    <tr>
-                                        <td>
-                                            <label>
-                                                <input value="1" type="radio" name="roomNo" id="roomNo">
-                                                <div class = "itemstat"></div>
-                                            </label>
-                                        </td>
-                                        <td><label for="roomNo">Room 1</label></td>
-                                        <td><label for="roomNo">₱ 2000</label></td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <label>
-                                                <input value="1" type="radio" name="roomNo" id="roomNo">
-                                                <div class = "itemstat"></div>
-                                            </label>
-                                        </td>
-                                        <td><label for="roomNo">Room 1</label></td>
-                                        <td><label for="roomNo">₱ 2000</label></td>
-                                    </tr> -->
+                                    <!-- Table data to be filled during AJAX. -->
                                 </table>
                             </div>
                         </div>
@@ -125,18 +69,18 @@
                             <p>Select payment type</p>
                             <div class = "radioContain">
                                 <label>
-                                    <input type = "radio" name = "payment" value = "onsite" checked />Pay onsite
+                                    <input type = "radio" name = "paymenttype" value = "onsite" required checked />Pay onsite
                                     <span class = "customRadio"></span>
                                 </label>
                                 <label>
-                                    <input type = "radio" name = "payment" value = "online" />Pay online
+                                    <input type = "radio" name = "paymenttype" value = "online" required />Pay online
                                     <span class = "customRadio"></span>
                                 </label>
                             </div>
                         </div>
                         <div class = "inputBox"> <!-- Button for submit and cancel -->
                             <div class = "buttonBox">
-                                <button type = "submit">Confirm</button>
+                                <input type = "submit" name="reserve" value="Confirm" />
                             </div>
                             <div class = "buttonBox">
                                 <a href = "index.php">
@@ -160,7 +104,7 @@
                     console.log(roomSelect);
                     $.ajax({
                         method: 'POST',
-                        url: 'includes/load-rooms.php',
+                        url: 'includes/api/load-rooms.php',
                         data: {
                             roomSelect: roomSelect
                         },

@@ -22,6 +22,7 @@ html body {
     background-size: cover;
     background-position-y: 0;
     background-attachment: fixed;
+    background-repeat: no-repeat; 
     color: #FFFFFF;
     position: relative;
     padding-bottom: 2em;
@@ -174,7 +175,7 @@ div.itemstat {
     width: 30px;
     height: 30px;
     margin: .6em 1em;
-    background-image: url('../images/bullet.png');
+    /* background-image: url('../images/bullet.png'); */
     background-position: center;
     background-size: cover;
 }
@@ -275,7 +276,7 @@ label input:checked ~ .customRadio {
     background-color: rgb(236, 212, 104);
 }
 
-button[type=submit] {
+input[type=submit] {
     width: 100%;
     border: .15em solid rgb(236, 212, 104);
     background: none;
@@ -285,7 +286,7 @@ button[type=submit] {
     transition: background-color .1s linear, color 0.1s linear;
 }
 
-button[type=submit]:hover {
+input[type=submit]:hover {
     background-color: rgb(236, 212, 104);
     color: #333333;
     cursor: pointer;
@@ -329,18 +330,47 @@ button[type=submit]:hover {
 }
 
 @media screen and (max-width: 1270px) {
-    body {
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: row;
+    .intro {
+        display: none;
     }
 
-    .intro, .container {
-        position: relative;
+    .container {
         width: 100%;
+        display: grid;
     }
 
-    .intro p {
-        position: absolute;
+    .formContain {
+        position: relative;
+        place-content: center;
+        
+    }
+}
+
+@media screen and (max-width: 600px) {
+    body {
+        background-color: rgb(247, 247, 247);
+    }
+
+    .banner {
+        padding: 0;
+    }
+
+    .container {
+        background-color: rgb(247, 247, 247);
+    }
+
+    .container > p {
+        color: #333333;
+    }
+
+    .formContain {
+        background: none;
+        width: 100%;
+        padding: 1em;
+        box-shadow: none;
+    }
+
+    .inputBox {
+        width: 100%;
     }
 }

@@ -1,0 +1,28 @@
+Jake ang validation sa number input kay dili dapat mag baba ug negative.
+This is for the contact no, noofadults, and noofkids.
+
+Then naa koy gibutang nga success php, bale example lang na nga location if ang user kay successfull iyang pag book.
+
+Nag attach sad kog SQL file jake para imong i import, asd_hotel ang name sa database dapat.
+
+////////////
+
+War... kulelat jud ko sa JavaScript, so my deepest apologies
+
+Most of the additions kay naa sa roomManage.php War. Statically, ang
+pop up imong makita, so if gusto nimo unahon ang sa list, go to roomManage.css
+then sa .popupBoxContain, iset nimo ang display to none
+
+Namention naman nako ganina tung unsay mahitabo sa text fields so I guess okay na to
+
+Then ang payment details War kay gienclose nako na sa isa kay div...
+and mudisplay lang na siya dapat if occupied ang room, otherwise if available
+kay display is set to none.
+
+If pwede War, pwede nimo maset and sa confirm button na if sa pagbook sa room
+kay ang value is 'Confirm check-in', then pag mucheck out na kay 'Confirm check-out'?
+
+Sorry jud kaayo War, 0 jud akong skills sa JavaScript as of now... Supposedly,
+clicking the close button would set the .popupBoxContain's display property to
+none, but I had no luck on nailing the code.
+But I'm still gonna try anyways hahaha

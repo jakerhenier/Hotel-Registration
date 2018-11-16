@@ -140,7 +140,7 @@ table tr:hover {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, .7);
-    display: none;
+    display: block;
 }
 
 .popupBox {
@@ -154,12 +154,19 @@ table tr:hover {
     margin: auto;
     padding: 2em;
     background-color: #EEEEEE;
-    border-radius: .15em;
+    overflow-y: auto;
 }
 
 .popupBox h3 {
     text-align: center;
+}
+
+.h3--room {
     margin-top: 0;
+}
+
+.roomDetails {
+    text-align: right;
 }
 
 .statusBox {
@@ -196,4 +203,103 @@ table tr:hover {
 .statusBox label input:checked + div {
     background-color: rgb(236, 212, 104);
     border: 2px solid rgb(236, 212, 104);
+}
+
+.formContain {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.h3--client {
+    margin-bottom: 0;
+}
+
+.formContain .inputBox {
+    width: inherit;
+}
+
+.inputBox > p {
+    margin-bottom: .5em;
+}
+
+.inputBox input[type=text], input[type=number], input[type=date] {
+    width: 100%;
+    background-color: rgb(250, 250, 250);
+    border: 1px solid rgb(236, 212, 104);
+    height: 2.5em;
+    padding: 1em;
+    border-radius: .15em;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#numContain {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.numInput {
+    width: 49%;
+}
+
+input[type=submit] {
+    width: 100%;
+    border: .15em solid rgb(236, 212, 104);
+    background: none;
+    padding: 1em;
+    font-family: 'Montserrat', sans-serif;
+    color: #666666;
+    transition: background-color .1s linear, color 0.1s linear;
+}
+
+input[type=submit]:hover {
+    background-color: rgb(236, 212, 104);
+    color: #333333;
+    cursor: pointer;
+}
+
+.formContain .inputBox:last-child {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 2em;
+}
+
+.h3--payment {
+    margin-bottom: 0;
+}
+
+.buttonBox:nth-child(1) {
+    width: 58%;
+}
+
+.buttonBox:nth-child(2) {
+    width: 40%;
+}
+
+.buttonBox a {
+    text-decoration: none;
+}
+
+#cancelButton {
+    width: 100%;
+    border: .15em solid rgb(170, 170, 170);
+    color: #666666;
+    transition: background-color .1s linear, color 0.1s linear;
+    cursor: pointer;
+}
+
+#cancelButton:hover {
+    background-color: rgb(170, 170, 170);
+    color: #FFFFFF;
+}
+
+#cancelButton p {
+    text-align: center;
+    font-size: 14px;
+    margin: 0;
+    padding: .9em;
 }

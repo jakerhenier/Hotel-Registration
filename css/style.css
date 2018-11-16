@@ -49,7 +49,7 @@ html, body {
     width: 100%;
     position: relative;
     background-color: #efe786;
-    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 0 30px 1px rgba(0, 0, 0, 0.25);
     z-index: 9;
 }
 
@@ -79,7 +79,7 @@ html, body {
     background-size: cover;
     background-repeat: no-repeat;
     margin-top: 2em;
-    box-shadow: 0 5px 10px 3px rgba(0, 0, 0, .14);
+    box-shadow: 0 5px 30px 3px rgba(0, 0, 0, .3);
 }
 
 .cardItem #darkOverlay {
@@ -167,12 +167,11 @@ p#about {
     padding: 1em 2em;
     background-color: rgb(219, 198, 103);
     text-align: center;
+    transition: transform 0.07s ease-in-out;
 }
 
-.reserve div p img {
-    width: 1.5em;
-    height: 1.5em;
-    vertical-align: middle;
+#reservation a div:hover {
+    transform: scale(1.05);
 }
 
 footer {
@@ -242,8 +241,20 @@ footer a div:hover {
         font-size: 2em;
     }
 
+    .ribbon {
+        padding: 0 1em;
+        text-align: left;
+    }
+
+    .cardContain {
+        padding-top: 1px;
+    }
+
     .cardItem {
-        margin-top: .25em;
+        margin-top: 1px;
+        height: 250px;
+        line-height: 1em;
+        box-shadow: none;
     }
 
     .cardItem .description {
