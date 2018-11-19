@@ -12,7 +12,7 @@ if (isset($_POST['reserve'])) {
     $roomNo = mysqli_real_escape_string($conn, $_POST['roomNo']);
     $paymenttype = mysqli_real_escape_string($conn, $_POST['paymenttype']);
 
-    $query = "INSERT INTO client VALUES ";
+    $query = "INSERT INTO clients VALUES ";
     $query .= "(DEFAULT, '{$lastname}', '{$firstname}', '{$contactno}', {$noofadults}, {$noofkids}, '{$check_in}', '{$check_out}', {$roomNo}, '{$paymenttype}')";
 
     if ($conn->query($query)) {

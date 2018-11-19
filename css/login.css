@@ -67,7 +67,7 @@ input[type=password] {
     font-weight: 900;
 }
 
-button[type=submit] {
+input[type=submit] {
     width: 100%;
     margin-top: 2em;
     border: none;
@@ -79,7 +79,7 @@ button[type=submit] {
     transition: background-color .1s linear, color 0.1s linear;
 }
 
-button[type=submit]:hover {
+input[type=submit]:hover {
     background-color: rgb(236, 212, 104);
     color: #333333;
     cursor: pointer;
