@@ -26,3 +26,15 @@ Sorry jud kaayo War, 0 jud akong skills sa JavaScript as of now... Supposedly,
 clicking the close button would set the .popupBoxContain's display property to
 none, but I had no luck on nailing the code.
 But I'm still gonna try anyways hahaha
+
+/////////////
+
+Jake napagana na nako tung clickable gud nga part sa manage.php, the logout logic, and by the way nag folder structuring ko
+para mas limpyo tan-awon and nag renaming sad hehe sensya. Tapos jake ang only problem nlng nako is 
+katong sa pag populate sa fields sa popupBoxContain, di na makaya sakong mata murag katugon najud ko hahaha
+Tiwason lang nato ni tomorrow, kaya rani kay naa nmn koy logic pero murag kapiyungon njd ko hehe.
+
+Another thing, mag include kog new sql file na i import nasad nimo, bale i override lang nko para dili kaayo big
+ang size sa pag push nako unya hehe.
+
+Naa lang koy ipa clarify saimo ugma.
