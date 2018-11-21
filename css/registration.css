@@ -6,7 +6,8 @@ html body {
     overflow-x: hidden;
     font-family: 'Montserrat', sans-serif;
     font-size: 100%;
-    background: url('../images/bed_s.jpg');
+    background: linear-gradient(to left, rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url('../images/bed_s.jpg');
+    background-blend-mode: overlay;
     background-size: cover;
     background-repeat: no-repeat;
     color: #333333;
@@ -27,7 +28,7 @@ html body {
     position: absolute;
     padding: 1em 2em;
     width: 500px;
-    height: 400px;
+    height: 600px;
     top: 0;
     left: 0;
     right: 0;
@@ -51,9 +52,10 @@ html body {
     margin: auto;
 }
 
-.notRegis {
-    padding-bottom: 1em;
-    color: rgb(236, 212, 104);
+.inputBox .required {
+    color: rgb(189, 77, 77);
+    padding-left: .2em;
+    font-weight: bold;
 }
 
 input[type=text], input[type=password] {
@@ -91,13 +93,4 @@ input[type=submit]:hover {
 
 .inputBox:nth-child(4) {
     margin-top: 1em;
-}
-
-.inputBox a {
-    text-decoration: none;
-    color: #777777;
-}
-
-.inputBox a:hover {
-    text-decoration: underline;
 }

@@ -219,6 +219,11 @@ footer a div:hover {
 }
 
 @media screen and (max-width: 600px) {
+    .banner h1 {
+        width: 100%;
+        padding-right: .5em;
+    }
+    
     .cardItem {
         margin-top: .5em;
     }
@@ -234,7 +239,6 @@ footer a div:hover {
     }
 
     .banner h1 {
-        width: 100%;
         top: 40%;
         left: 0;
         padding: 0 0 0 .5em;
