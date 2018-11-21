@@ -29,7 +29,7 @@
                 </div>
                 <div class="inputBox">
                     <p>Password<span class = "required">*</span></p>
-                    <input type="text" name="" id="" required>
+                    <input type="password" name="" id="" required>
                 </div>
                 <!--
                 <div class="inputBox">
