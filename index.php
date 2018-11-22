@@ -91,7 +91,7 @@
         </div>
 
         <footer>
-            <a href = "login.php">
+            <a href = "management/login.php">
                 <div>staff login</div>
             </a>
         </footer>

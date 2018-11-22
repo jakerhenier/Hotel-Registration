@@ -27,7 +27,7 @@ html body {
     position: absolute;
     padding: 1em 2em;
     width: 500px;
-    height: 400px;
+    height: 460px;
     top: 0;
     left: 0;
     right: 0;
@@ -44,6 +44,44 @@ html body {
     text-align: center;
     margin-top: 0;
     font-size: 1.5em;
+}
+
+.userNotify {
+    padding: 1rem 1rem;
+}
+
+.userNotify p {
+    margin: 0;
+}
+
+.userNotify img {
+    width: 1.2em;
+    vertical-align: bottom;
+    margin-right: .5em;
+}
+
+.userNotify span {
+    margin-top: .5em;
+}
+
+/*============== 
+DISPLAY BOXES HERE
+================*/
+
+.initial {
+    position: relative;
+    border: 1px solid rgba(0, 0, 0, 0);
+    padding-left: 0;
+
+    display: block;
+}
+
+.incorrect-creds {
+    position: relative;
+    background: rgba(255, 107, 107, 0.5);
+    border: 1px solid rgba(255, 107, 107);
+
+    display: none;
 }
 
 .inputBox {
