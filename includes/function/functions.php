@@ -29,4 +29,23 @@ function registerGuest($firstname, $lastname, $contactno, $username, $password) 
     $stmt->bind_param('sssss', $firstname, $lastname, $contactno, $username, $password);
     $stmt->execute();
 }
+
+function checkifUserExists($username, $password) {
+    global $conn;
+
+    $username = $conn->real_escape_string($username);
+    $password = $conn->real_escape_string(sha1(sha1($password, true)));
+
+    $query = "SELECT * FROM guests WHERE username = ? AND password = ?";
+    $stmt = $conn->prepare($query);
+    $stmt->bind_param('ss', $username, $password);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    if ($result->num_rows > 0) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
 ?>

@@ -4,10 +4,11 @@ html body {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
+    overflow-y: auto;
     font-family: 'Montserrat', sans-serif;
     font-size: 100%;
-    background: linear-gradient(to left, rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url('../images/bed_s.jpg');
-    background-blend-mode: overlay;
+    background: url('../images/bed_s.jpg');
+    background-attachment: fixed;
     background-size: cover;
     background-repeat: no-repeat;
     color: #333333;
@@ -18,7 +19,7 @@ html body {
 }
 
 #darkOverlay {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, .5);
@@ -28,7 +29,7 @@ html body {
     position: absolute;
     padding: 1em 2em;
     width: 500px;
-    height: 600px;
+    height: 670px;
     top: 0;
     left: 0;
     right: 0;
@@ -45,6 +46,43 @@ html body {
     text-align: center;
     margin-top: 0;
     font-size: 1.5em;
+}
+
+.userNotify {
+    padding: 1rem 1rem;
+}
+
+.userNotify p {
+    margin: 0;
+}
+
+.userNotify p img {
+    width: 1.2em;
+    vertical-align: bottom;
+    margin-right: .5em;
+}
+
+.userNotify span {
+    margin-top: .5em;
+}
+
+/*============== 
+DISPLAY BOXES HERE
+================*/
+
+.initial-reg {
+    position: relative;
+    border: 1px solid rgba(0, 0, 0, 0);
+    padding-left: 0;
+
+    display: block;
+}
+
+.user-exists {
+    position: relative;
+    background: rgba(255, 107, 107, 0.5);
+    border: 1px solid rgba(255, 107, 107);
+    display: block
 }
 
 .inputBox {
@@ -93,4 +131,18 @@ input[type=submit]:hover {
 
 .inputBox:nth-child(4) {
     margin-top: 1em;
+}
+
+.goBack {
+    margin-top: 1em;
+    text-align: right;
+}
+
+.goBack a {
+    text-decoration: none;
+    color: #777777;
+}
+
+.goBack a:hover {
+    text-decoration: underline;
 }

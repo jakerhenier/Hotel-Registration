@@ -13,12 +13,20 @@ session_start();
         </div>
         <div class="loginBox">
             <p>Enter your information</p>
+            <!-- <div class = "userNotify initial-reg">
+                <p><img src="images/info.png" alt=""><span>Fill up all fields below.</span></p>
+            </div> -->
             <?php 
                 if (isset($_SESSION['reg_msg'])) {
-                    echo $_SESSION['reg_msg'];
-                    $_SESSION['reg_msg'] = ''; 
+                    echo   '<div class="userNotify user-exists">
+                            <p><span><img src="images/error.png"></span>'.$_SESSION['reg_msg'].'</p>
+                            </div>';
+                    unset($_SESSION['reg_msg']);
                 }
             ?>
+            <!-- <div class = "userNotify user-exists">
+                <p><img src="images/error.png" alt=""></p>
+            </div> -->
             <form action="includes/action/register_guest.php" method="POST">
                 <div class="inputBox">
                     <p>First name<span class = "required">*</span></p>
@@ -47,6 +55,11 @@ session_start();
                 </div> -->
                 <div class="inputBox">
                     <input type="submit" name="register" value="Register">
+                </div>
+                <div class="inputBox goBack">
+                    <a href = "login.php">
+                        Go back
+                    </a>
                 </div>
             </form>
         </div>

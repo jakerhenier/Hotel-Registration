@@ -13,12 +13,21 @@ session_start();
         </div>
         <div class = "loginBox">
             <p>Enter your credentials</p>
+            <!-- <p>Login</p> -->
+            <!-- <div class = "userNotify initial">
+                <p><img src="images/info.png" alt=""><span>Enter your credentials.</span></p>
+            </div> -->
             <?php 
-                if (isset($_SESSION['reg_msg'])) {
-                    echo $_SESSION['reg_msg'];
-                    $_SESSION['reg_msg'] = ''; 
+                if (isset($_SESSION['login_msg'])) {
+                    echo   '<div class="userNotify incorrect-creds">
+                            <p><span><img src="images/error.png"></span>'.$_SESSION['login_msg'].'</p>
+                            </div>';
+                    unset($_SESSION['login_msg']);
                 }
             ?>
+            <!-- <div class = "userNotify incorrect-creds">
+                <p><img src="images/error.png" alt=""><span>Incorrect credentials entered.</span></p>
+            </div> -->
             <form action="includes/action/login_guest.php" method="POST">
                 <div class = "inputBox">
                     <p>Username</p>
@@ -35,7 +44,7 @@ session_start();
                     <a href = "registration.php">Not registered yet? Click here.</a>
                 </div>
                 <div class = "inputBox">
-                    <a href = "../index.php">Return to homepage</a>
+                    <a href = "index.php">Return to homepage</a>
                 </div>
             </form>
         </div>
