@@ -1,14 +1,11 @@
 <?php 
 session_start();
-if (isset($_SESSION['login_session'])) {
-    header('location: index.php');
-}
 ?>
 <!DOCTYPE html>
 <meta name = "viewport" content = "width = device-width, initial-scale = 1.0" charset = "utf-8">
 <html>
     <head>
-        <title>Staff Login</title>
+        <title>Guest Login</title>
         <link rel = "stylesheet" type = "text/css" media = "all" href = "css/login.css" />
     </head>
     <body>
@@ -16,7 +13,13 @@ if (isset($_SESSION['login_session'])) {
         </div>
         <div class = "loginBox">
             <p>Enter your credentials</p>
-            <form action="../includes/action/login.php" method="POST">
+            <?php 
+                if (isset($_SESSION['reg_msg'])) {
+                    echo $_SESSION['reg_msg'];
+                    $_SESSION['reg_msg'] = ''; 
+                }
+            ?>
+            <form action="includes/action/login_guest.php" method="POST">
                 <div class = "inputBox">
                     <p>Username</p>
                     <input type = "text" name = "username" required/>
