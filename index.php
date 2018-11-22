@@ -75,7 +75,7 @@
                 <p>
                     Make your reservation now!
                     <div id = "reservation">
-                        <a href = "login_client.php">
+                        <a href = "login.php">
                             <div>Login</div>
                         </a>
                     </div>

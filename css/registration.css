@@ -82,8 +82,7 @@ DISPLAY BOXES HERE
     position: relative;
     background: rgba(255, 107, 107, 0.5);
     border: 1px solid rgba(255, 107, 107);
-
-    display: none;
+    display: block
 }
 
 .inputBox {
