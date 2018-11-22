@@ -28,6 +28,11 @@ session_start();
             <!-- <div class = "userNotify incorrect-creds">
                 <p><img src="images/error.png" alt=""><span>Incorrect credentials entered.</span></p>
             </div> -->
+
+            <div class="userNotify regisSuccess">
+                <p><img src="images/success.png" alt=""><span>Registration successful!</span></p>
+            </div>
+
             <form action="includes/action/login_guest.php" method="POST">
                 <div class = "inputBox">
                     <p>Username</p>
