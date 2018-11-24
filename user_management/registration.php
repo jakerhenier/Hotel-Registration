@@ -6,28 +6,22 @@ session_start();
 <html>
     <head>
         <title>Register for an account</title>
-        <link rel = "stylesheet" type = "text/css" media = "all" href = "css/registration.css" />
+        <link rel = "stylesheet" type = "text/css" media = "all" href = "../css/registration.css" />
     </head>
     <body>
         <div id = "darkOverlay">
         </div>
         <div class="loginBox">
             <p>Enter your information</p>
-            <!-- <div class = "userNotify initial-reg">
-                <p><img src="images/info.png" alt=""><span>Fill up all fields below.</span></p>
-            </div> -->
             <?php 
                 if (isset($_SESSION['reg_msg'])) {
                     echo   '<div class="userNotify user-exists">
-                            <p><span><img src="images/error.png"></span>'.$_SESSION['reg_msg'].'</p>
+                            <p><span><img src="../images/error.png"></span>'.$_SESSION['reg_msg'].'</p>
                             </div>';
                     unset($_SESSION['reg_msg']);
                 }
             ?>
-            <!-- <div class = "userNotify user-exists">
-                <p><img src="images/error.png" alt=""></p>
-            </div> -->
-            <form action="includes/action/register_guest.php" method="POST">
+            <form action="../includes/action/register_guest.php" method="POST">
                 <div class="inputBox">
                     <p>First name<span class = "required">*</span></p>
                     <input type="text" name="firstname" id="" required>
