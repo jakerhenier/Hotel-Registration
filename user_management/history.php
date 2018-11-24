@@ -4,12 +4,12 @@
 <html>
     <head>
         <title>User activity history</title>
-        <link rel="stylesheet" media = "all" href="css/userHistory.css">
+        <link rel="stylesheet" media = "all" href="../css/userHistory.css">
     </head>
     <body>
         <div class = "top">
             <div id = "menuItems">
-                <a href = "userReservations.php">
+                <a href = "reservations.php">
                     <div>
                         Reservations
                     </div>
@@ -22,7 +22,7 @@
             </div>
             <div class = "userOptions">
                 <span>Welcome, user.</span> <!-- First name of the current user will be displayed after 'Welcome, ' -->
-                <a href = "../includes/action/logout.php">logout</a> <!-- Destroy session and redirect to login page -->
+                <a href = "../../includes/action/logout.php">logout</a> <!-- Destroy session and redirect to login page -->
             </div>
         </div>
 

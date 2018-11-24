@@ -1,4 +1,5 @@
 <?php 
+// session_start();
 require_once('../config/db.php');
 
 function checkIfUsernameExists($username) {
@@ -32,6 +33,7 @@ function registerGuest($firstname, $lastname, $contactno, $username, $password) 
 
 function checkifUserExists($username, $password) {
     global $conn;
+    $guestData = array();
 
     $username = $conn->real_escape_string($username);
     $password = $conn->real_escape_string(sha1(sha1($password, true)));
@@ -42,6 +44,10 @@ function checkifUserExists($username, $password) {
     $stmt->execute();
     $result = $stmt->get_result();
     if ($result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+            $guestData[] = $row;
+        }
+        $_SESSION['guest_session'] = $guestData;
         return true;
     }
     else {
