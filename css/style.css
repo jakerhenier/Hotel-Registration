@@ -45,6 +45,46 @@ html, body {
     font-size: 3em;
 }
 
+.banner p  {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    color: #FFFFFF;
+    text-align: center;
+    animation: jump 2s 1s ease-in-out 3;
+    animation-fill-mode: both;
+}
+
+@keyframes jump {
+    0% {
+        margin-bottom: 1em;
+    }
+
+    40% {
+        margin-bottom: 2em;
+    }
+
+    60% {
+        margin-bottom: 2em;
+    }
+
+    70% {
+        margin-bottom: 1em;
+    }
+
+    80% {
+        margin-bottom: 1.3em;
+    }
+
+    90% {
+        margin-bottom: 1em;
+    }
+
+    100% {
+        margin-bottom: 1em;
+    }
+}
+
 .ribbon {
     width: 100%;
     position: relative;

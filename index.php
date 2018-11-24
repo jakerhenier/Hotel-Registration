@@ -9,6 +9,7 @@
         <div class = "banner">
             <div id = "darkOverlay"></div>
             <h1>Reward yourself with the pampering that you deserve.</h1>
+            <p>Scroll down for more</p>
         </div>
 
         <div class = "ribbon">

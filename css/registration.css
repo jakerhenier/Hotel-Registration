@@ -1,6 +1,13 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,700,800');
 
-html body {
+html {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    width: 100%;
+    height: 100%;
     margin: 0;
     padding: 0;
     overflow-x: hidden;
@@ -12,6 +19,9 @@ html body {
     background-size: cover;
     background-repeat: no-repeat;
     color: #333333;
+
+    display: grid;
+    align-content: center;
 }
 
 * {
@@ -26,19 +36,15 @@ html body {
 }
 
 .loginBox {
-    position: absolute;
+    position: relative;
     padding: 1em 2em;
     width: 500px;
-    height: 670px;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
     margin: auto;
     background-color: rgb(236, 236, 236);
     box-shadow: 0 0 5px 2px #555555;
     border-radius: 2px;
     display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
 }
 
