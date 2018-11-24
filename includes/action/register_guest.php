@@ -12,12 +12,12 @@ if (isset($_POST['register'])) {
 
     if (checkIfUsernameExists($username)) {
         $_SESSION['reg_msg'] = "Username has already been taken.";
-        header('location: ../../registration.php');
+        header('location: ../../user_management/registration.php');
     }
     else {
         registerGuest($firstname, $lastname, $contactno, $username, $password);
         $_SESSION['reg_msg'] = "Successfully Registered";
-        header('location: ../../login.php');
+        header('location: ../../user_management/login.php');
     }
 }
 ?>

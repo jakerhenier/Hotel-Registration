@@ -6,34 +6,35 @@ session_start();
 <html>
     <head>
         <title>Guest Login</title>
-        <link rel = "stylesheet" type = "text/css" media = "all" href = "css/login.css" />
+        <link rel = "stylesheet" type = "text/css" media = "all" href = "../css/login.css" />
     </head>
     <body>
         <div id = "darkOverlay">
         </div>
         <div class = "loginBox">
             <p>Enter your credentials</p>
-            <!-- <p>Login</p> -->
-            <!-- <div class = "userNotify initial">
-                <p><img src="images/info.png" alt=""><span>Enter your credentials.</span></p>
-            </div> -->
             <?php 
                 if (isset($_SESSION['login_msg'])) {
                     echo   '<div class="userNotify incorrect-creds">
-                            <p><span><img src="images/error.png"></span>'.$_SESSION['login_msg'].'</p>
+                            <p><span><img src="../images/error.png"></span>'.$_SESSION['login_msg'].'</p>
                             </div>';
                     unset($_SESSION['login_msg']);
                 }
             ?>
-            <!-- <div class = "userNotify incorrect-creds">
-                <p><img src="images/error.png" alt=""><span>Incorrect credentials entered.</span></p>
+            <?php 
+                if (isset($_SESSION['reg_msg'])) {
+                    echo   '<div class="userNotify regisSuccess">
+                            <p><span><img src="../images/success.png"></span>'.$_SESSION['reg_msg'].'</p>
+                            </div>';
+                    unset($_SESSION['reg_msg']);
+                }
+            ?>
+
+            <!-- <div class="userNotify regisSuccess">
+                <p><img src="images/success.png" alt=""><span>Registration successful!</span></p>
             </div> -->
 
-            <div class="userNotify regisSuccess">
-                <p><img src="images/success.png" alt=""><span>Registration successful!</span></p>
-            </div>
-
-            <form action="includes/action/login_guest.php" method="POST">
+            <form action="../includes/action/login_guest.php" method="POST">
                 <div class = "inputBox">
                     <p>Username</p>
                     <input type = "text" name = "username" required/>

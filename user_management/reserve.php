@@ -1,9 +1,21 @@
+<?php
+session_start();
+
+$guestData = '';
+
+if (!isset($_SESSION['guest_session'])) {
+    header('location: reservations.php');
+}
+else {
+    $guestData = $_SESSION['guest_session'];
+}
+?>
 <!DOCTYPE html>
 <meta name = "viewport" content = "width = device-width, initial-scale = 1.0" charset = "utf-8">
 <html>
     <head>
         <title>Reserve a room</title>
-        <link rel = "stylesheet" type = "text/css" media = "all" href = "css/reservation.css" />
+        <link rel = "stylesheet" type = "text/css" media = "all" href = "../css/reservation.css" />
     </head>
     <body>
         <div class = "banner" id = "reservationBanner">
@@ -14,18 +26,18 @@
             <div class = "container"> <!-- Main div -->
                 <p>Room reservation</p>
                 <div class = "formContain">
-                    <form action = "includes/action/reserve.php" method="POST"> <!-- Enter form action here, PHP file directory -->
+                    <form action = "../includes/action/reserve.php" method="POST"> <!-- Enter form action here, PHP file directory -->
                         <div class = "inputBox">
                             <p>Last name<span class = "required">*</span></p>
-                            <input type = "text" name = "lastname" required> <!-- Text field for last name -->
+                            <input type = "text" name = "lastname" value="<?php echo $guestData[0]['lastname']; ?>" disabled required> <!-- Text field for last name -->
                         </div>
                         <div class = "inputBox">
                             <p>First name<span class = "required">*</span></p>
-                            <input type = "text" name = "firstname" required> <!-- Text field first name -->
+                            <input type = "text" name = "firstname" value="<?php echo $guestData[0]['firstname']; ?>" disabled required> <!-- Text field first name -->
                         </div>
                         <div class = "inputBox">
                             <p>Contact number (+63)<span class = "required">*</span></p>
-                            <input type = "number" name = "contactno" min="0" required> <!-- Text field for contact number -->
+                            <input type = "number" name = "contactno" value="<?php echo $guestData[0]['contactno']; ?>" disabled min="0" required> <!-- Text field for contact number -->
                         </div>
                         <div class = "inputBox" id = "numContain">
                             <div class = "numInput">
@@ -40,17 +52,17 @@
                         <div class = "inputBox" id = "numContain">
                             <div class = "dateInput">
                                 <p>Check-in date<span class = "required">*</span></p>
-                                <input type = "date" name="check_in" required>
+                                <input type = "date" name="check_in" id="check_in" required>
                             </div>
                             <div class = "dateInput">
                                 <p>Check-out date<span class = "required">*</span></p>
-                                <input type = "date" name="check_out" required>
+                                <input type = "date" name="check_out" id="check_out" required>
                             </div>
                         </div>
                         <!-- Expandable list for room type -->
                         <div class = "inputBox">
                             <p>Select room type</p>
-                            <select id="room-select">
+                            <select id="room-select" required>
                                 <option selected disabled>Select...</option>
                                 <option value = "standard">Standard</option>
                                 <option value = "deluxe">Deluxe</option>
@@ -95,7 +107,7 @@
             </div>
         </div>
 
-        <script src="scripts/jquery.js"></script>
+        <script src="../scripts/jquery.js"></script>
         <script>
             $(document).ready(() => {
                 $('#room-select').on('change', function (e) {
@@ -104,16 +116,34 @@
                     console.log(roomSelect);
                     $.ajax({
                         method: 'POST',
-                        url: 'includes/api/load-rooms.php',
+                        url: '../includes/api/load-rooms.php',
                         data: {
                             roomSelect: roomSelect
                         },
                         dataType: 'text',
                         success: function (data) {
                             $('#rooms').html(data);
+                            $('#room-select').attr('required', true);
                         } 
                     });
                 });
+            })
+        </script>
+        <script>
+            $(document).ready(function() {
+                var dtToday = new Date();
+                
+                var month = dtToday.getMonth() + 1;
+                var day = dtToday.getDate();
+                var year = dtToday.getFullYear();
+                if(month < 10)
+                    month = '0' + month.toString();
+                if(day < 10)
+                    day = '0' + day.toString();
+                
+                var maxDate = year + '-' + month + '-' + day;
+                $('#check_in').attr('min', maxDate);
+                $('#check_out').attr('min', maxDate);
             })
         </script>
     </body>
