@@ -1,6 +1,7 @@
 <?php 
 session_start();
 require_once('../includes/config/db.php');
+require_once('function/functions.php');
 
 $guestData = '';
 if (!isset($_SESSION['guest_session'])) {
@@ -51,7 +52,7 @@ $result = $stmt->get_result();
             <h3>Current Reservations</h3>
             <?php 
             if (isset($_SESSION['success_msg'])) {
-                echo $_SESSION['success_msg'];
+                echo '<h4 style="color: green; text-align: center;  ">'.$_SESSION['success_msg'].'</h4>';
                 unset($_SESSION['success_msg']);
             }
             ?>
@@ -65,10 +66,15 @@ $result = $stmt->get_result();
                                 </tr>
                                 <tr>
                                     <td>Room '.$row['roomno'].'</td>
-                                    <td>
-                                        <button value='.$row['roomno'].' id="edit" role = "button">Edit</button>
-                                        <button value='.$row['roomno'].' id="cancel" role = "button">Cancel</button>
-                                    </td>
+                                    '.(((checkIfOccupied($conn, $row['roomno'], $guestData[0]['guest_id'])) == 'Reserved') 
+                                    ?   '<td>
+                                            <button value='.$row['roomno'].' id="edit" role = "button">Edit</button>
+                                            <button value='.$row['roomno'].' id="cancel" role = "button">Cancel</button>
+                                        </td>'
+                                    :   '<td style="text-align: center;">
+                                            Room occupied and uneditable.
+                                        </td>').
+                                    '
                                 </tr>
                             </table>';
                 }
@@ -89,19 +95,6 @@ $result = $stmt->get_result();
                     <h3>Edit reservation details</h3>
 
                     <form action="../includes/action/update_reservation_guest.php" method="POST">
-                        <!-- <span>Room type</span>
-                        <select id="room-select">
-                            <option selected disabled>Select...</option>
-                            <option value = "standard">Standard</option>
-                            <option value = "deluxe">Deluxe</option>
-                            <option value = "joint">Joint</option>
-                            <option value = "suite">Suite</option>
-                            <option value = "apartment">Apartment style</option>
-                        </select>
-
-                        <table>
-                        </table> -->
-
                         <div class="inputBoxes">
                             <div>
                                 <p>Check-in date</p>
@@ -140,20 +133,30 @@ $result = $stmt->get_result();
             <div class="confirmDel">
                 <div class="dialog">
                     <p>Confirm cancellation?</p>
-                    <div class="inputBoxes choices">
-                        <div>
-                            <button>Yes</button>
+                    <form action="../includes/action/cancel_reservation.php" method="POST">
+                        <div class="inputBoxes choices">
+                            <div>
+                                <button id="yes" name="yes">Yes</button>
+                            </div>
+                            <div>
+                                <button id="no" name="no">No</button>
+                            </div>
                         </div>
-                        <div>
-                            <button>No</button>
-                        </div>
-                    </div>
+                    </form>
                 </div>
             </div>
     </body>
     <script src="../scripts/jquery.js"></script>
     <script>
         $(document).ready(function() {
+            function getDay(day) {
+                return day < 10 ? '0' + day : '' + day;
+            }
+            
+            function getMonth(month) {
+                return month < 10 ? '0' + month : '' + month;
+            }
+
             $('#edit').on('click', function() {
                 const roomno = $('#edit').val();
                 $.ajax({
@@ -165,17 +168,19 @@ $result = $stmt->get_result();
                     dataType: 'text',
                     success: function(data) {
                         const d = JSON.parse(data);
+                        console.log(d);
                         
                         // Dates
                         const date1 = new Date(d[0].check_in);
                         const date2 = new Date(d[0].check_out);
-                        const check_in = `${date1.getFullYear()}-${date1.getMonth() + 1}-${date1.getDate()}`
-                        const check_out = `${date2.getFullYear()}-${date2.getMonth() + 1}-${date2.getDate()}`
+                        const check_in = `${date1.getFullYear()}-${getMonth(date1.getMonth() + 1)}-${getDay(date1.getDate())}`
+                        const check_out = `${date2.getFullYear()}-${getMonth(date2.getMonth() + 1)}-${getDay(date2.getDate())}`
 
+                        console.log(check_out);
                         $('#check_in').attr('value', check_in)
                         $('#check_out').attr('value', check_out)
                         $('#check_in').attr('min', check_in);
-                        $('#check_out').attr('min', check_in);
+                        $('#check_out').attr('min', check_out);
                         $('#noofadults').attr('value', d[0].noofadults);
                         $('#noofkids').attr('value', d[0].noofkids);
                         $('#confirm').attr('value', d[0].roomno);
@@ -187,6 +192,12 @@ $result = $stmt->get_result();
 
             $('#close').on('click', function() {
                 $('.popupBoxContain').css('display', 'none');
+            })
+
+            $('#cancel').on('click', function() {
+                const roomno = $('#edit').val();
+                $('#yes').attr('value', roomno);
+                $('.confirmDel').css('display', 'grid');
             })
         })
     </script>
