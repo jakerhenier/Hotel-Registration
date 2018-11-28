@@ -38,3 +38,17 @@ Another thing, mag include kog new sql file na i import nasad nimo, bale i overr
 ang size sa pag push nako unya hehe.
 
 Naa lang koy ipa clarify saimo ugma.
+
+/////////////
+
+
+Jake naa koy gi fix nga bug sa reservations.php wherein ang user kay dili niya ma edit ang iyang other reservations.
+Tapos ang katong edit ug cancel nga button gud is nalahi sya, from <button> to <a> kay mao na ang fix niya. 
+Palihog nalang kog fix sa css niya jake hehe.
+And tama jake mag add tag button link (naka <a> tag lang) sa reservations.php page gihapon nga mag redirect sa user
+sa reserve.php para mag reserve again. Ikaw lang bahala kung asa ayos i butang hehe. 
+
+After aning fix kay wala natay problema sa guest management na side.
+
+Sa admin jake mag tiwas ko karon kay natulugan nako to gabii XD. Tapos mag pa add/edit lang ko saimo just same ani.
+Salamat jake!
