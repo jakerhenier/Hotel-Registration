@@ -104,6 +104,7 @@ table {
     height: auto;
     border: 0;
     position: relative;
+    border-collapse: collapse;
 }
 
 table tr {
@@ -126,6 +127,21 @@ table tr td:nth-child(1) {
     width: 70%;
 }
 
+table tr td a {
+    width: 49%;
+    padding: .3rem auto;
+
+    border: .1rem solid rgb(236, 212, 104);
+    
+    text-decoration: none;
+    color: #333333;
+}
+
+table tr td a:first-child {
+    background: rgb(236, 212, 104);
+}
+
+/*
 table tr td button {
     font-family: 'Montserrat', sans-serif;
     width: 49%;
@@ -156,7 +172,7 @@ button[name=cancel]:hover {
 
 table tr:hover td button {
     opacity: 1;
-}
+} */
 
 .popupBoxContain {
     position: absolute;
