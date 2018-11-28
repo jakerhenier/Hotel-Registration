@@ -50,7 +50,7 @@ session_start();
                     <a href = "registration.php">Not registered yet? Click here.</a>
                 </div>
                 <div class = "inputBox">
-                    <a href = "index.php">Return to homepage</a>
+                    <a href = "../index.php">Return to homepage</a>
                 </div>
             </form>
         </div>
