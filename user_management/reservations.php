@@ -17,6 +17,49 @@ $stmt->bind_param('i', $guestData[0]['guest_id']);
 $stmt->execute();
 $result = $stmt->get_result();
 
+$check_in = '1970-01-01';
+$check_out = '1970-01-01';
+$noofadults = '1';
+$noofkids = '0';
+$roomno = '0';
+
+if (isset($_GET['edit'])) {
+    $roomno = $_GET['edit'];
+
+    $query = "SELECT * FROM reservations WHERE roomno = ? AND guest_id = {$guestData[0]['guest_id']}";
+    $stmt = $conn->prepare($query);
+    $stmt->bind_param('i', $roomno);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    
+    if ($result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+            $check_in = date('Y-m-d', strtotime($row['check_in']));
+            $check_out = date('Y-m-d', strtotime($row['check_out']));
+            $noofadults = $row['noofadults'];
+            $noofkids = $row['noofkids'];
+        }
+    }
+    else {
+        $_SESSION['error_msg'] = "User has no reservation in that room.";
+        header('location: reservations.php');
+    }
+}
+
+if (isset($_GET['cancel'])) {
+    $roomno = $_GET['cancel'];
+
+    $query = "SELECT * FROM reservations WHERE roomno = ? AND guest_id = {$guestData[0]['guest_id']}";
+    $stmt = $conn->prepare($query);
+    $stmt->bind_param('i', $roomno);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    
+    if (!($result->num_rows > 0)) {
+        $_SESSION['error_msg'] = "User has no reservation in that room.";
+        header('location: reservations.php');
+    }
+}
 ?>
 <!DOCTYPE html>
 <meta charset = "eng">
@@ -25,6 +68,7 @@ $result = $stmt->get_result();
     <head>
         <title>Manage your reservations</title>
         <link rel="stylesheet" media = "all" href="../css/userReservations.css">
+        <script src="../scripts/jquery.js"></script>
     </head>
     <body>
         <div class = "top">
@@ -52,8 +96,14 @@ $result = $stmt->get_result();
             <h3>Current Reservations</h3>
             <?php 
             if (isset($_SESSION['success_msg'])) {
-                echo '<h4 style="color: green; text-align: center;  ">'.$_SESSION['success_msg'].'</h4>';
+                echo '<h4 style="color: green; text-align: center;">'.$_SESSION['success_msg'].'</h4>';
                 unset($_SESSION['success_msg']);
+            }
+            ?>
+            <?php 
+            if (isset($_SESSION['error_msg'])) {
+                echo '<h4 style="color: red; text-align: center;">'.$_SESSION['error_msg'].'</h4>';
+                unset($_SESSION['error_msg']);
             }
             ?>
             <?php 
@@ -68,8 +118,8 @@ $result = $stmt->get_result();
                                     <td>Room '.$row['roomno'].'</td>
                                     '.(((checkIfOccupied($conn, $row['roomno'], $guestData[0]['guest_id'])) == 'Reserved') 
                                     ?   '<td>
-                                            <button value='.$row['roomno'].' id="edit" role = "button">Edit</button>
-                                            <button value='.$row['roomno'].' id="cancel" role = "button">Cancel</button>
+                                            <a href="?edit='.$row['roomno'].'">Edit</a>
+                                            <a href="?cancel='.$row['roomno'].'">Cancel</a>
                                         </td>'
                                     :   '<td style="text-align: center;">
                                             Room occupied and uneditable.
@@ -98,28 +148,28 @@ $result = $stmt->get_result();
                         <div class="inputBoxes">
                             <div>
                                 <p>Check-in date</p>
-                                <input type="date" name="check_in" id="check_in">
+                                <input type="date" name="check_in" value="<?php echo $check_in; ?>" id="check_in" required>
                             </div>
                             <div>
                                 <p>Check-out date</p>
-                                <input type="date" name="check_out" id="check_out">
+                                <input type="date" name="check_out" value="<?php echo $check_out; ?>" id="check_out" required>
                             </div>
                         </div>
 
                         <div class="inputBoxes">
                             <div>
                                 <p>Number of adults</p>
-                                <input type="number" min = "1" max = "4" name="noofadults" id="noofadults" required>
+                                <input type="number" min = "1" max = "4" name="noofadults" value="<?php echo $noofadults ?>" id="noofadults" required>
                             </div>
                             <div>
                                 <p>Number of children</p>
-                                <input type="number" min = "0" max = "4" name="noofkids" id="noofkids" required>
+                                <input type="number" min = "0" max = "4" name="noofkids" value="<?php echo $noofkids ?>" id="noofkids" required>
                             </div>
                         </div>
 
                         <div class="inputBoxes input-button">
                             <div>
-                                <button id = "confirm" name="confirm">Confirm</button>
+                                <button id = "confirm" value="<?php echo $roomno; ?>" name="confirm">Confirm</button>
                             </div>
                             <div>
                                 <button id = "close" name="close">Close</button>
@@ -136,7 +186,7 @@ $result = $stmt->get_result();
                     <form action="../includes/action/cancel_reservation.php" method="POST">
                         <div class="inputBoxes choices">
                             <div>
-                                <button id="yes" name="yes">Yes</button>
+                                <button id="yes" value="<?php echo $roomno; ?>" name="yes">Yes</button>
                             </div>
                             <div>
                                 <button id="no" name="no">No</button>
@@ -146,59 +196,18 @@ $result = $stmt->get_result();
                 </div>
             </div>
     </body>
-    <script src="../scripts/jquery.js"></script>
-    <script>
-        $(document).ready(function() {
-            function getDay(day) {
-                return day < 10 ? '0' + day : '' + day;
-            }
-            
-            function getMonth(month) {
-                return month < 10 ? '0' + month : '' + month;
-            }
-
-            $('#edit').on('click', function() {
-                const roomno = $('#edit').val();
-                $.ajax({
-                    url: 'api/get_data.php',
-                    method: 'POST',
-                    data: {
-                        roomno: roomno
-                    },
-                    dataType: 'text',
-                    success: function(data) {
-                        const d = JSON.parse(data);
-                        console.log(d);
-                        
-                        // Dates
-                        const date1 = new Date(d[0].check_in);
-                        const date2 = new Date(d[0].check_out);
-                        const check_in = `${date1.getFullYear()}-${getMonth(date1.getMonth() + 1)}-${getDay(date1.getDate())}`
-                        const check_out = `${date2.getFullYear()}-${getMonth(date2.getMonth() + 1)}-${getDay(date2.getDate())}`
-
-                        console.log(check_out);
-                        $('#check_in').attr('value', check_in)
-                        $('#check_out').attr('value', check_out)
-                        $('#check_in').attr('min', check_in);
-                        $('#check_out').attr('min', check_out);
-                        $('#noofadults').attr('value', d[0].noofadults);
-                        $('#noofkids').attr('value', d[0].noofkids);
-                        $('#confirm').attr('value', d[0].roomno);
-                        
-                        $('.popupBoxContain').css('display', 'grid');
-                    }
-                })
-            })
-
-            $('#close').on('click', function() {
-                $('.popupBoxContain').css('display', 'none');
-            })
-
-            $('#cancel').on('click', function() {
-                const roomno = $('#edit').val();
-                $('#yes').attr('value', roomno);
-                $('.confirmDel').css('display', 'grid');
-            })
-        })
-    </script>
+    <?php 
+    if (isset($_GET['edit'])) {
+        echo   '<script>
+                    $(".popupBoxContain").css("display", "grid");
+                </script>';
+    }
+    ?>
+    <?php
+    if (isset($_GET['cancel'])) {
+        echo   '<script>
+                    $(".confirmDel").css("display", "grid");
+                </script>';
+    }
+    ?>
 </html>
