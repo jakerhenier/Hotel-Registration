@@ -1,7 +1,7 @@
 <?php 
 require_once('../config/db.php');
 
-$query = "SELECT * FROM rooms INNER JOIN clients ON rooms.client_id = clients.client_id WHERE status = 'Reserved';";
+$query = "SELECT * FROM rooms INNER JOIN guests ON rooms.guest_id = guests.guest_id WHERE status = 'Reserved'";
 $result = $conn->query($query);
 echo   '<tr>
             <th>Room number</th>

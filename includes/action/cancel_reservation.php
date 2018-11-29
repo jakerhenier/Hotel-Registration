@@ -31,16 +31,21 @@ if (isset($_POST['yes'])) {
                 header('location: ../../user_management/reservations.php');
             }
             else {
-                echo "Error: " . $his_query . "<br>" . $conn->error;
+                $_SESSION['error_msg'] = "Wow hackerman ampota!";
+                header('location: ../../user_management/reservations.php'); 
             }
         }
         else {
-            echo "Error: " . $room_query . "<br>" . $conn->error;
+            $_SESSION['error_msg'] = "Wow hackerman ampota!";
+            header('location: ../../user_management/reservations.php');
         }
     }
     else {
-        echo "Error: " . $res_query . "<br>" . $conn->error;
+        $_SESSION['error_msg'] = "Wow hackerman ampota!";
+        header('location: ../../user_management/reservations.php');
     }
 }
-
+else {
+    header('location: ../../user_management/reservations.php');
+}
 ?>
