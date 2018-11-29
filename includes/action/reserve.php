@@ -22,14 +22,20 @@ if (isset($_POST['reserve'])) {
 
     $history = $firstname . " " . $lastname . " reserved Room " . $roomNo;
 
+    $date1 = date_create($_POST['check_in']);
+    $date2 = date_create($_POST['check_out']);
+    $diff = date_diff($date1, $date2);
+    $days_duration = $diff->format('%a');
+
     $query = "INSERT INTO reservations VALUES ";
-    $query .= "({$guest_id}, '{$lastname}', '{$firstname}', '{$contactno}', {$noofadults}, {$noofkids}, '{$check_in}', '{$check_out}', {$roomNo}, '{$paymenttype}')";
+    $query .= "({$guest_id}, '{$lastname}', '{$firstname}', '{$contactno}', {$noofadults}, {$noofkids}, '{$check_in}', '{$check_out}', {$roomNo}, '{$paymenttype}', CURRENT_TIMESTAMP, {$days_duration})";
 
     if ($conn->query($query)) {
         $up_query = "UPDATE rooms SET guest_id = {$guest_id}, status = 'Reserved' WHERE roomNo = {$roomNo}";
         if ($conn->query($up_query)) {
             $his_query = "INSERT INTO histories VALUES (DEFAULT, {$guest_id}, '$history', CURRENT_TIMESTAMP)";
             if ($conn->query($his_query)) {
+                $_SESSION['success_msg'] = "Reservation Success!"; 
                 header('location: ../../user_management/reservations.php');
             }
             else {

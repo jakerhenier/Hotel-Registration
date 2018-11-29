@@ -116,10 +116,13 @@ table tr td {
 }
 
 table tr th:nth-child(1) {
-    width: 80%
+    width: 50%
 }
 
 table tr th:nth-child(2) {
+    width: 30%;
+}
+table tr th:nth-child(3) {
     width: 20%;
 }
 

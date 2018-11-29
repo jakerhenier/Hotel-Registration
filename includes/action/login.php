@@ -18,7 +18,7 @@ if (isset($_POST['login'])) {
             while ($row = $result->fetch_assoc()) {
                 $userdata[] = $row;
             }
-            $_SESSION['login_session'] = $userdata;
+            $_SESSION['admin_session'] = $userdata;
             header('location: ../../management/index.php');
         }
         else {
@@ -28,5 +28,8 @@ if (isset($_POST['login'])) {
 
         $stmt->close();
     }
+}
+else {
+    header('location: ../../management/login.php');
 }
 ?>

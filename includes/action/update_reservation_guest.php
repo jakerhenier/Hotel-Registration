@@ -43,12 +43,16 @@ if (isset($_POST['confirm'])) {
             header('location: ../../user_management/reservations.php');
         }
         else {
-            echo $conn->error . '<br>' . $his_query;
+            $_SESSION['error_msg'] = "Wow hackerman ampota!";
+            header('location: ../../user_management/reservations.php');
         }
     }
     else {
-        echo $conn->error . '<br>' . $query;
-    }
-    
+        $_SESSION['error_msg'] = "Wow hackerman ampota!";
+        header('location: ../../user_management/reservations.php');
+    }   
+}
+else {
+    header('location: ../../user_management/reservations.php');
 }
 ?>

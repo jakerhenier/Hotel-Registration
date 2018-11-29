@@ -4,11 +4,11 @@ require_once('../includes/config/db.php');
 
 $userdata = '';
 
-if (!isset($_SESSION['login_session'])) {
+if (!isset($_SESSION['admin_session'])) {
     header('location: index.php');
 }
 else {
-    $userdata = $_SESSION['login_session'];
+    $userdata = $_SESSION['admin_session'];
 }
 ?>
 <!DOCTYPE html>
@@ -88,6 +88,7 @@ else {
         <script>
             $(document).on('click', '#trigger', function(e) {
                 var roomNo = this.value;
+                console.log(roomNo);
                 $.ajax({
                     method: 'POST',
                     url: '../includes/action/occupy.php',
