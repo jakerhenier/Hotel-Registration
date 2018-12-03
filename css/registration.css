@@ -102,7 +102,7 @@ DISPLAY BOXES HERE
     font-weight: bold;
 }
 
-input[type=text], input[type=password] {
+input[type=text], input[type=password], input[type=number] {
     width: 100%;
     background-color: rgb(240, 240, 240);
     border: 1px solid rgb(236, 212, 104);
