@@ -1,5 +1,31 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,700,800');
 
+/* FOR TESTING */
+
+.userNotify {
+    padding: 1rem 1rem;
+}
+
+.userNotify p {
+    margin: 0;
+}
+
+.userNotify p img {
+    width: 1.2em;
+    vertical-align: bottom;
+    margin-right: .5em;
+}
+
+.userNotify span {
+    margin-top: .5em;
+}
+.user-exists {
+    position: relative;
+    background: rgba(255, 107, 107, 0.5);
+    border: 1px solid rgba(255, 107, 107);
+    display: block
+}
+
 html body {
     margin: 0;
     padding: 0;

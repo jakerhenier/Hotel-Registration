@@ -26,19 +26,27 @@ else {
             <div class = "container"> <!-- Main div -->
                 <p>Room reservation</p>
                 <div class = "formContain">
+                <?php 
+                    if (isset($_SESSION['reservation_msg'])) {
+                        foreach($_SESSION['reservation_msg'] as $errors) {
+                            echo  '<div>'.$errors.'</div>';
+                        }
+                        unset($_SESSION['reservation_msg']);
+                    }
+                ?>
                     <form action = "../includes/action/reserve.php" method="POST"> <!-- Enter form action here, PHP file directory -->
-                        <div class = "inputBox">
-                            <p>Last name<span class = "required">*</span></p>
-                            <input type = "text" name = "lastname" value="<?php echo $guestData[0]['lastname']; ?>" disabled required> <!-- Text field for last name -->
-                        </div>
-                        <div class = "inputBox">
-                            <p>First name<span class = "required">*</span></p>
-                            <input type = "text" name = "firstname" value="<?php echo $guestData[0]['firstname']; ?>" disabled required> <!-- Text field first name -->
-                        </div>
-                        <div class = "inputBox">
-                            <p>Contact number (+63)<span class = "required">*</span></p>
-                            <input type = "number" name = "contactno" value="<?php echo $guestData[0]['contactno']; ?>" disabled min="0" required> <!-- Text field for contact number -->
-                        </div>
+                            <!-- <div class = "inputBox">
+                                <p>Last name<span class = "required">*</span></p>
+                                <input type = "text" name = "lastname" value="<?php //echo $guestData[0]['lastname']; ?>" disabled required>
+                            </div>
+                            <div class = "inputBox">
+                                <p>First name<span class = "required">*</span></p>
+                                <input type = "text" name = "firstname" value="<?php //echo $guestData[0]['firstname']; ?>" disabled required>
+                            </div>
+                            <div class = "inputBox">
+                                <p>Contact number (+63)<span class = "required">*</span></p>
+                                <input type = "number" name = "contactno" value="<?php //echo $guestData[0]['contactno']; ?>" disabled min="0" required>
+                            </div> -->
                         <div class = "inputBox" id = "numContain">
                             <div class = "numInput">
                                 <p>Number of adults</p>
@@ -63,7 +71,7 @@ else {
                         <div class = "inputBox">
                             <p>Select room type</p>
                             <select id="room-select" required>
-                                <option selected disabled>Select...</option>
+                                <option selected value="" disabled>Select...</option>
                                 <option value = "standard">Standard</option>
                                 <option value = "deluxe">Deluxe</option>
                                 <option value = "joint">Joint</option>
@@ -123,7 +131,6 @@ else {
                         dataType: 'text',
                         success: function (data) {
                             $('#rooms').html(data);
-                            $('#room-select').attr('required', true);
                         } 
                     });
                 });

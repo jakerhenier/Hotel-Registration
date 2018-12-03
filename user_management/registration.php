@@ -15,9 +15,11 @@ session_start();
             <p>Enter your information</p>
             <?php 
                 if (isset($_SESSION['reg_msg'])) {
-                    echo   '<div class="userNotify user-exists">
-                            <p><span><img src="../images/error.png"></span>'.$_SESSION['reg_msg'].'</p>
-                            </div>';
+                    foreach($_SESSION['reg_msg'] as $errors) {
+                        echo   '<div class="userNotify user-exists">
+                                    <p><span><img src="../images/error.png"></span>'.$errors.'</p>
+                                </div>';
+                    }
                     unset($_SESSION['reg_msg']);
                 }
             ?>
@@ -32,7 +34,7 @@ session_start();
                 </div>
                 <div class="inputBox">
                     <p>Contact number (+63)<span class = "required">*</span></p>
-                    <input type="text" name="contactno" id="" required>
+                    <input type="number" min=0 name="contactno" id="" required>
                 </div>
                 <div class="inputBox">
                     <p>Username<span class = "required">*</span></p>
@@ -42,11 +44,6 @@ session_start();
                     <p>Password<span class = "required">*</span></p>
                     <input type="password" name="password" id="" required>
                 </div>
-                <!--
-                <div class="inputBox">
-                    <p>Confirm password</p>
-                    <input type="text" name="" id="" required>
-                </div> -->
                 <div class="inputBox">
                     <input type="submit" name="register" value="Register">
                 </div>
