@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,700,800');
+
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 100%;
+    background-color: rgb(243, 243, 243);
+    text-align: center;
+    color: #333333;
+    height: 100%;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: #333333;
+}
+
+h2 {
+    width: 100%;
+    padding: 1rem 0;
+    margin: 0 0 3rem;
+    background: #efe786;
+}
+
+.content-contain {
+    width: 1000px;
+    margin: auto;
+    padding-bottom: 3rem;
+
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.content-image {
+    width: 475px;
+    height: 350px;
+
+    margin-top: 25px;
+
+    box-shadow: 0 .1rem .5rem .1rem rgba(0, 0, 0, .2);
+}
+
+.content-image:nth-child(1) {
+    background: url('../images/establishment/1.jpg');
+    background-position: center;
+    background-size: cover;
+}
+
+.content-image:nth-child(2) {
+    background: url('../images/establishment/2.jpg');
+    background-position: center;
+    background-size: cover;
+}
+
+.content-image:nth-child(3) {
+    background: url('../images/establishment/3.jpg');
+    background-position: center;
+    background-size: cover;
+}
+
+.content-image:nth-child(4) {
+    background: url('../images/establishment/4.jpg');
+    background-position: center;
+    background-size: cover;
+}
+
+.content-image:nth-child(5) {
+    background: url('../images/establishment/5.jpg');
+    background-position: center;
+    background-size: cover;
+}
+
+.content-image:nth-child(6) {
+    background: url('../images/establishment/6.jpg');
+    background-position: center;
+    background-size: cover;
+}
+
+.content-image:nth-child(7) {
+    background: url('../images/establishment/7.jpg');
+    background-position: center;
+    background-size: cover;
+}
+
+.content-image:nth-child(8) {
+    background: url('../images/establishment/8.jpg');
+    background-position: center;
+    background-size: cover;
+}
+
+.content-image:nth-child(9) {
+    background: url('../images/establishment/9.jpg');
+    background-position: center;
+    background-size: cover;
+}
+
+.content-image:nth-child(10) {
+    background: url('../images/establishment/10.jpg');
+    background-position: center;
+    background-size: cover;
+}
+
+.content-image:nth-child(11) {
+    background: url('../images/establishment/11.jpg');
+    background-position: center;
+    background-size: cover;
+}
+
+.content-image:nth-child(12) {
+    background: url('../images/establishment/12.jpg');
+    background-position: center;
+    background-size: cover;
+}
+
+.content-image:nth-child(13) {
+    background: url('../images/establishment/13.jpg');
+    background-position: center;
+    background-size: cover;
+}
+
+.content-image:nth-child(14) {
+    background: url('../images/establishment/14.jpg');
+    background-position: center;
+    background-size: cover;
+}
+
+.content-image:nth-child(15) {
+    background: url('../images/establishment/15.jpg');
+    background-position: center;
+    background-size: cover;
+}
+
+.content-image:nth-child(16) {
+    background: url('../images/establishment/16.jpg');
+    background-position: center;
+    background-size: cover;
+}
+
+.content-image:nth-child(17) {
+    background: url('../images/establishment/17.jpg');
+    background-position: center;
+    background-size: cover;
+}
+
+.content-image:nth-child(18) {
+    background: url('../images/establishment/18.jpg');
+    background-position: center;
+    background-size: cover;
+}
+
+.content-image:nth-child(19) {
+    background: url('../images/establishment/19.jpg');
+    background-position: center;
+    background-size: cover;
+}
+
+.content-image:nth-child(20) {
+    background: url('../images/establishment/20.jpg');
+    background-position: center;
+    background-size: cover;
+}
+
+.nav-button {
+    width: 50px;
+    height: 50px;
+    font-size: 2rem;
+    font-weight: 800;
+    background: #efe786;
+    border-radius: .2rem;
+
+    display: grid;
+    align-content: center;
+    position: absolute;
+
+    bottom: .25rem;
+}
+
+#back {
+    left: .25rem;
+    transform: rotate(180deg);
+}
+
+#top {
+    right: 1.25rem;
+    transform: rotate(-90deg);
+}

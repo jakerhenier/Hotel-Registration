@@ -61,6 +61,11 @@
                     </p>
                 </div>
             </div>
+
+            <a id = "est-buttons" href="establishments.php">
+                See more of these luxuries
+            </a>
+
         </div>
 
         <h1 id = "about">ABOUT US</h1>
